@@ -1,0 +1,31 @@
+# Dependency directories
+node_modules/
+
+# Build and cache directories
+dist/
+.astro/
+.git/
+.github/
+
+# Lock files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Media and assets (prevent text searches in binaries)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp
+*.ico
+*.mp4
+*.webm
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

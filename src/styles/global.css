@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-brand-primary: #00529B;
+  --color-brand-primary-hover: #003F77;
+  --color-brand-secondary: #F27427;
+  --color-brand-secondary-hover: #D35A11;
+  
+  /* Utilities */
+  --color-utility-success: #22C55E;
+  --color-utility-warning: #EAB308;
+  --color-utility-danger: #EF4444;
+  --color-utility-info: #3B82F6;
+  --color-utility-transit: #F27427;
+
+  /* Neutrals */
+  --color-slate-950: #090D16;
+  --color-slate-900: #0F172A;
+  --color-slate-800: #1E293B;
+  --color-slate-700: #334155;
+  --color-slate-400: #94A3B8;
+  --color-slate-100: #F1F5F9;
+  
+  /* Typography fallback - no external fonts */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  /* Borders */
+  --radius-sharp: 0px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-slate-950);
+    color: var(--color-slate-100);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}

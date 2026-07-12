@@ -1,0 +1,133 @@
+{
+  "design_system_name": "Exacta ERP Design System",
+  "version": "1.0.0",
+  "meta": {
+    "framework_alignment": {
+      "atomic_design": "Brad Frost - Semantic & global token architecture",
+      "product_risk_mitigation": "Marty Cagan - Monolithic visual core with semantic variations",
+      "market_context": "April Dunford - High density data layouts for automotive industrial sector"
+    },
+    "source_branding": "Exacta ERP Logo Palette (Corporate Royal Blue & Vibrant Orange)"
+  },
+  "global_tokens": {
+    "colors": {
+      "brand": {
+        "primary": "#00529B",
+        "primary_hover": "#003F77",
+        "secondary": "#F27427",
+        "secondary_hover": "#D35A11"
+      },
+      "utility": {
+        "success": "#22C55E",
+        "warning": "#EAB308",
+        "danger": "#EF4444",
+        "info": "#3B82F6",
+        "flagged_transit": "#F27427"
+      },
+      "neutral": {
+        "slate_950": "#090D16",
+        "slate_900": "#0F172A",
+        "slate_800": "#1E293B",
+        "slate_700": "#334155",
+        "slate_400": "#94A3B8",
+        "slate_100": "#F1F5F9",
+        "white": "#FFFFFF"
+      }
+    },
+    "typography": {
+      "font_family": {
+        "sans": "Inter, system-ui, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "font_size": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
+        "h2": "2rem",
+        "h1": "2.75rem"
+      },
+      "font_weight": {
+        "regular": "400",
+        "medium": "500",
+        "semibold": "600",
+        "bold": "700"
+      }
+    },
+    "spacing": {
+      "xxs": "0.25rem",
+      "xs": "0.5rem",
+      "sm": "0.75rem",
+      "md": "1rem",
+      "lg": "1.5rem",
+      "xl": "2rem"
+    },
+    "borders": {
+      "radius": {
+        "sharp": "0px",
+        "sm": "4px",
+        "md": "6px",
+        "lg": "8px"
+      }
+    }
+  },
+  "semantic_themes": {
+    "active_vertical": "automotive_distribution",
+    "verticals": {
+      "automotive_distribution": {
+        "visual_density": "high_compact",
+        "tokens": {
+          "background_page": "global_tokens.colors.neutral.slate_950",
+          "background_card": "global_tokens.colors.neutral.slate_900",
+          "background_table_header": "global_tokens.colors.neutral.slate_800",
+          "border_color": "global_tokens.colors.neutral.slate_700",
+          "text_main": "global_tokens.colors.neutral.slate_100",
+          "text_muted": "global_tokens.colors.neutral.slate_400",
+          "accent_action": "global_tokens.colors.brand.secondary",
+          "accent_corporate": "global_tokens.colors.brand.primary"
+        }
+      },
+      "fmcg_food_distribution": {
+        "visual_density": "medium_visual",
+        "tokens": {
+          "background_page": "global_tokens.colors.neutral.white",
+          "background_card": "global_tokens.colors.neutral.slate_100",
+          "background_table_header": "global_tokens.colors.neutral.slate_400",
+          "border_color": "global_tokens.colors.neutral.slate_400",
+          "text_main": "global_tokens.colors.neutral.slate_950",
+          "text_muted": "global_tokens.colors.neutral.slate_700",
+          "accent_action": "global_tokens.colors.utility.success",
+          "accent_corporate": "global_tokens.colors.brand.primary"
+        }
+      }
+    }
+  },
+  "layout_density_rules": {
+    "high_compact": {
+      "table_padding_y": "global_tokens.spacing.xxs",
+      "table_padding_x": "global_tokens.spacing.xs",
+      "card_padding": "global_tokens.spacing.sm",
+      "grid_gap": "global_tokens.spacing.xs",
+      "input_height": "2rem",
+      "purpose": "Maximiza el espacio en pantalla para mostrar compatibilidades de repuestos, stock en tiempo real y número de dientes de engranajes sin requerir scroll."
+    }
+  },
+  "component_blueprints": {
+    "hero_cta_button": {
+      "background": "semantic_themes.verticals.automotive_distribution.tokens.accent_action",
+      "text_color": "global_tokens.colors.neutral.white",
+      "font_weight": "global_tokens.typography.font_weight.bold",
+      "border_radius": "global_tokens.borders.radius.md",
+      "padding": "global_tokens.spacing.md global_tokens.spacing.lg",
+      "action_trigger": "SDR WhatsApp Live Conversion Channel"
+    },
+    "data_table_parts": {
+      "font": "global_tokens.typography.font_family.mono",
+      "text_size": "global_tokens.typography.font_size.sm",
+      "row_spacing": "layout_density_rules.high_compact.table_padding_y",
+      "flagged_row_background": "global_tokens.colors.utility.flagged_transit",
+      "flagged_row_purpose": "Resaltar de manera inmediata los repuestos ingresados bajo el formato de Almacén de Tránsito (Venta sin stock / Compra en Plaza M&M)."
+    }
+  }
+}

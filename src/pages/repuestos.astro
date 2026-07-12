@@ -1,0 +1,1458 @@
+---
+import LandingLayout from "../layouts/LandingLayout.astro";
+import ContactWidget from "../components/ContactWidget.astro";
+---
+
+<LandingLayout
+  title="Exacta ERP - Sistema de Gestión para Distribuidoras de Repuestos en Perú"
+  description="Vende sin stock de forma legal, compra en plaza y vuela en mostrador. Control de margen en tiempo real, costeo de importaciones y contabilidad SUNAT."
+>
+  <!-- HERO SECTION: El Gancho de Categoría Radical -->
+  <section
+    id="hero"
+    class="relative overflow-hidden pt-12 pb-24 md:py-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 border-b border-slate-900"
+  >
+    <!-- Subtle Background Accents -->
+    <div
+      class="absolute top-0 left-1/4 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl -z-10"
+    >
+    </div>
+    <div
+      class="absolute bottom-10 right-1/4 w-96 h-96 bg-brand-secondary/5 rounded-full blur-3xl -z-10"
+    >
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center"
+      >
+        <!-- Left Side Copy -->
+        <div class="lg:col-span-7 space-y-6 text-left">
+          <!-- Cintillo -->
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-secondary/30 bg-brand-secondary/10"
+          >
+            <span class="w-2 h-2 rounded-full bg-brand-secondary animate-pulse"
+            ></span>
+            <span
+              class="text-xs font-bold text-orange-300 tracking-wide uppercase"
+            >
+              DISEÑADO EXCLUSIVAMENTE PARA MAYORISTAS Y MINORISTAS AUTOMOTRICES
+              EN EL PERÚ
+            </span>
+          </div>
+
+          <!-- Titular Principal H1 -->
+          <h1
+            class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight"
+          >
+            Vende sin stock, compra en plaza, cuadra tus inventarios y vuela en
+            mostrador... <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-brand-secondary to-orange-300"
+              >sin que tus vendedores regalen margen</span
+            >.
+          </h1>
+
+          <!-- Subtitular H2 -->
+          <p
+            class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl"
+          >
+            Creado para repuesteras que combinan la velocidad del mostrador con
+            la complejidad de miles de repuestos y sus aplicaciones en
+            diferentes marcas y modelos de carros. Protege tu rentabilidad <strong
+              class="text-slate-100 font-semibold"
+              >controlando la utilidad por pedido en vivo</strong
+            > y mantén tu Inventario Permanente Valorizado en línea con las exigencias
+            vigentes de la SUNAT, sin procesos de cierre.
+          </p>
+
+          <!-- Main Call to Actions -->
+          <div
+            class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4"
+          >
+            <a
+              href="https://wa.me/51999647337?text=Hola%20Exacta%20ERP,%20deseo%20iniciar%20el%20diagn%C3%B3stico%20de%20mi%20distribuidora%20de%20repuestos."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center px-8 py-4 bg-brand-secondary hover:bg-brand-secondary-hover text-slate-950 font-bold text-base rounded-md shadow-xl shadow-brand-secondary/20 hover:shadow-brand-secondary/30 transition-all hover:scale-105 active:scale-95 text-center"
+            >
+              Iniciar Diagnóstico
+            </a>
+            <div class="flex flex-col text-left justify-center px-1">
+              <span
+                class="text-xs text-slate-100 font-bold flex items-center gap-1"
+              >
+                <svg
+                  class="w-3.5 h-3.5 text-green-400 fill-current"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  ></path>
+                </svg>
+                Toma menos de 2 minutos vía chat.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: VSL Interactive Mock Player -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div
+            class="w-full max-w-md bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-2xl relative group"
+          >
+            <!-- Video Mock Canvas -->
+            <div
+              id="vsl-video-player"
+              class="relative aspect-video bg-slate-950 flex flex-col items-center justify-center overflow-hidden w-full"
+            >
+              <!-- Real YouTube Player (Loads on demand) -->
+              <iframe
+                id="vsl-iframe"
+                class="absolute inset-0 w-full h-full hidden"
+                src=""
+                title="Exacta ERP Demo Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+              <!-- Close Video Button (Hidden by default, shown when video plays) -->
+              <button
+                id="vsl-close-btn"
+                class="hidden absolute top-3 right-3 z-20 bg-slate-950/80 hover:bg-slate-900/95 border border-slate-700 text-white rounded px-2.5 py-1 text-xs font-semibold cursor-pointer transition-all hover:scale-105 active:scale-95 flex items-center gap-1 shadow-lg"
+                aria-label="Cerrar video y regresar"
+              >
+                ✕ Cerrar Video
+              </button>
+
+              <!-- Background Thumbnail Image / Mock System Panel -->
+              <div
+                id="vsl-thumbnail"
+                class="absolute inset-0 bg-slate-900 p-4 flex flex-col justify-between transition-opacity duration-300"
+              >
+                <!-- Top Mock Bar -->
+                <div
+                  class="flex items-center justify-between border-b border-slate-800 pb-2"
+                >
+                  <span
+                    class="text-[10px] font-mono text-orange-300 flex items-center gap-1.5"
+                  >
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-brand-secondary animate-pulse"
+                    ></span>
+                    EXACTA ERP - VISTA MOSTRADOR
+                  </span>
+                  <span
+                    class="text-[9px] bg-slate-800 text-slate-100 px-1.5 py-0.5 rounded font-mono"
+                    >STOCK: 0</span
+                  >
+                </div>
+
+                <!-- Center Code/Sales Simulator graphic -->
+                <div
+                  class="flex flex-col items-center justify-center py-4 space-y-2"
+                >
+                  <div
+                    class="w-48 bg-slate-800/80 p-2.5 rounded border border-slate-700/50 flex flex-col space-y-1"
+                  >
+                    <div class="h-2 w-16 bg-slate-600 rounded"></div>
+                    <div
+                      class="h-3 w-36 bg-brand-secondary/20 rounded border border-brand-secondary/30"
+                    >
+                    </div>
+                    <div class="h-2 w-24 bg-slate-600 rounded"></div>
+                  </div>
+                  <span class="text-[11px] text-slate-400 font-medium"
+                    >Ver video de demostración</span
+                  >
+                </div>
+
+                <!-- Aspect Ratio Video Bottom Overlay -->
+                <div
+                  class="flex items-center justify-between text-[10px] text-slate-400 pt-1.5 border-t border-slate-800/50"
+                >
+                  <span>Demostración: Exacta ERP</span>
+                  <span>Video</span>
+                </div>
+              </div>
+
+              <!-- Overlaid Big Play Button (when not playing) -->
+              <button
+                id="vsl-play-btn"
+                class="relative z-10 w-16 h-16 rounded-full bg-brand-secondary hover:bg-brand-secondary-hover text-slate-950 flex items-center justify-center shadow-lg transition-transform duration-200 hover:scale-110 active:scale-95 cursor-pointer"
+                aria-label="Reproducir video demostración"
+              >
+                <!-- Play Triangle -->
+                <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Video Info Footer -->
+            <div class="p-4 bg-slate-900 border-t border-slate-800">
+              <span class="text-xs font-semibold text-white block"
+                >Caso Práctico: Vender sin stock de forma legal</span
+              >
+              <p class="text-[11px] text-slate-400 mt-1">
+                Mira en 45 segundos cómo un vendedor despacha un repuesto con
+                stock cero sin parar la venta.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESPEJO DEL DOLOR (Tesis del Problema) -->
+  <section id="dolores" class="py-20 bg-slate-950 border-b border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-bold text-orange-300 uppercase tracking-wider"
+          >El Caos del Sistema Tradicional</span
+        >
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+          ¿Cuánta venta estás perdiendo cada vez que tu sistema te obliga a
+          rechazar un pedido por falta de stock, y dejas que el cliente se vaya
+          a la competencia?
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Los sistemas de ventas y gestión tradicionales fueron diseñados para
+          la comodidad de una oficina administrativa, no para la velocidad y las
+          exigencias de la calle repuestera. Cuando la venta quema en el
+          mostrador, un sistema que te bloquea el pedido es un sistema que te
+          está quebrando el negocio.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Dolor Points in VoC (Peruvian Slang) -->
+        <div class="space-y-6">
+          <!-- Introducción Corta -->
+          <div class="border-l-2 border-orange-500 pl-4 py-1 space-y-1 mb-6">
+            <span
+              class="text-[10px] font-bold text-orange-400 uppercase tracking-wider block"
+              >Problemas del Día a Día</span
+            >
+            <p class="text-sm text-slate-200 font-semibold leading-relaxed">
+              Si estás al frente de una tienda de repuestos, seguro te
+              encuentras con los siguientes problemas:
+            </p>
+          </div>
+
+          <!-- Dolor 1 -->
+          <div
+            class="flex gap-4 p-5 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700/80 transition-all"
+          >
+            <div
+              class="flex-shrink-0 w-10 h-10 rounded bg-red-950/50 border border-utility-danger/30 flex items-center justify-center text-utility-danger"
+            >
+              <svg
+                class="w-5 h-5 fill-none stroke-current stroke-2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                ></path>
+              </svg>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-sm font-bold text-slate-100">
+                ¿Tus vendedores inventan stock o fuerzan el inventario?
+              </h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Tus vendedores alteran el stock del item que falta por no perder
+                la venta del cliente que pide 20 productos diferentes en
+                mostrador.
+              </p>
+            </div>
+          </div>
+
+          <!-- Dolor 2 -->
+          <div
+            class="flex gap-4 p-5 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700/80 transition-all"
+          >
+            <div
+              class="flex-shrink-0 w-10 h-10 rounded bg-red-950/50 border border-utility-danger/30 flex items-center justify-center text-utility-danger"
+            >
+              <svg
+                class="w-5 h-5 fill-none stroke-current stroke-2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                ></path>
+              </svg>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-sm font-bold text-slate-100">
+                ¿Se generan problemas cuando el vendedor hace 'compras en
+                plaza'?
+              </h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Logística de mandar al vendedor corriendo a conseguir el
+                repuesto con el vecino a un reducido margen y a tener que
+                regularizar la factura de compra posteriormente.
+              </p>
+            </div>
+          </div>
+
+          <!-- Dolor 3 -->
+          <div
+            class="flex gap-4 p-5 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700/80 transition-all"
+          >
+            <div
+              class="flex-shrink-0 w-10 h-10 rounded bg-red-950/50 border border-utility-danger/30 flex items-center justify-center text-utility-danger"
+            >
+              <svg
+                class="w-5 h-5 fill-none stroke-current stroke-2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                ></path>
+              </svg>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-sm font-bold text-slate-100">
+                ¿Quedas desfinanciado al pagar a tus proveedores locales /
+                internacionales?
+              </h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Vendes repuestos sin saber si estás vendiendo por debajo de tu
+                verdadero punto de equilibrio. El tiempo de crédito de compra vs
+                tiempo de cobranza de clientes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Comparison: Rígido vs Exacta -->
+        <div class="space-y-6">
+          <div
+            class="p-6 rounded-lg bg-slate-900 border border-slate-800 relative overflow-hidden"
+          >
+            <!-- Red Warning Accent -->
+            <div
+              class="absolute top-0 right-0 w-24 h-24 bg-utility-danger/10 rounded-full blur-xl"
+            >
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-2 h-2 rounded-full bg-utility-danger"></span>
+              <span
+                class="text-xs font-bold text-slate-400 uppercase tracking-wider font-mono"
+                >SISTEMAS TRADICIONALES CONTABLES</span
+              >
+            </div>
+
+            <!-- Mock Windows/ERP Error Box -->
+            <div
+              class="bg-slate-950 p-4 rounded border border-slate-800 space-y-3 font-mono text-xs"
+            >
+              <div
+                class="flex items-center justify-between text-slate-400 border-b border-slate-900 pb-2"
+              >
+                <span>ERPs Tradicionales</span>
+                <span class="text-slate-600">✕</span>
+              </div>
+              <div class="flex items-start gap-3 py-2 text-slate-200">
+                <span
+                  class="w-8 h-8 rounded-full bg-utility-danger/25 border border-utility-danger flex items-center justify-center text-utility-danger text-lg font-bold"
+                  >!</span
+                >
+                <div class="space-y-1">
+                  <span class="text-white font-bold block"
+                    >Error: Stock Insuficiente</span
+                  >
+                  <span class="text-[10px] text-slate-400 block"
+                    >No es posible facturar el producto con stock cero.
+                    Operación cancelada.</span
+                  >
+                </div>
+              </div>
+              <div
+                class="text-[10px] text-utility-danger border border-utility-danger/20 bg-utility-danger/5 p-2 rounded"
+              >
+                Efecto: El vendedor no puede emitir boleta, el cliente se va a
+                la tienda vecina, o el vendedor inventa stock rompiendo la
+                contabilidad.
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="p-6 rounded-lg bg-slate-900 border border-brand-secondary/40 relative overflow-hidden"
+          >
+            <!-- Orange Success Accent -->
+            <div
+              class="absolute top-0 right-0 w-24 h-24 bg-brand-secondary/15 rounded-full blur-xl"
+            >
+            </div>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-2 h-2 rounded-full bg-brand-secondary"></span>
+              <span
+                class="text-xs font-bold text-orange-300 uppercase tracking-wider font-mono"
+                >LA REALIDAD CON EXACTA ERP</span
+              >
+            </div>
+
+            <!-- Mock Exacta Solution Box -->
+            <div
+              class="bg-slate-950 p-4 rounded border border-brand-secondary/25 space-y-3 font-mono text-xs"
+            >
+              <div
+                class="flex items-center justify-between text-orange-300 border-b border-slate-900 pb-2"
+              >
+                <span>Exacta Mostrador v3.2</span>
+                <span class="text-slate-600">✓</span>
+              </div>
+              <div class="flex items-start gap-3 py-2 text-slate-200">
+                <span
+                  class="w-8 h-8 rounded-full bg-brand-secondary/20 border border-brand-secondary flex items-center justify-center text-orange-300 text-sm font-bold"
+                  >✓</span
+                >
+                <div class="space-y-1">
+                  <span class="text-white font-bold block"
+                    >Almacén de Tránsito Inteligente</span
+                  >
+                  <span class="text-[10px] text-slate-300 block"
+                    >Stock físico: 0. Flag tránsito activado. Boleta de venta
+                    autorizada y enviada a SUNAT.</span
+                  >
+                </div>
+              </div>
+              <div
+                class="text-[10px] text-green-400 border border-green-500/20 bg-green-500/5 p-2 rounded"
+              >
+                Efecto: El mostrador vuela en 10 segundos, no pierdes al cliente
+                y el sistema amarra la factura posterior de compra en plaza
+                automáticamente.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPERPODERES DE EXACTA (Solución Core) -->
+  <section
+    id="sistema"
+    class="py-20 bg-slate-900 border-b border-slate-800 relative"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-bold text-orange-300 uppercase tracking-wider"
+          >El Motor de tu Crecimiento</span
+        >
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+          Los 3 Pilares que jubilan tus Exceles y sistemas rígidos
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Desarrollados específicamente para las reglas operativas y tributarias
+          del comercio de autopartes en Perú.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Pillar 1 -->
+        <div
+          class="bg-slate-950 border border-slate-800 rounded-lg p-6 flex flex-col justify-between space-y-6 hover:border-slate-700/80 transition-all"
+        >
+          <div class="space-y-4">
+            <span
+              class="text-xs font-bold text-orange-300 uppercase tracking-wider block"
+              >Pilar 1</span
+            >
+            <h3 class="text-lg font-bold text-white">
+              Almacén de Tránsito Inteligente
+            </h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Vende repuestos con stock físico cero de forma legal. El sistema
+              simula ingresos transitorios automáticos para emitir la factura en
+              mostrador en segundos. Cuando registras la factura del proveedor
+              local, Exacta ERP regulariza y amarra la compra automáticamente.
+            </p>
+          </div>
+
+          <!-- Micro Animation 1 -->
+          <div
+            class="bg-slate-900 border border-slate-800/80 rounded p-4.5 font-mono text-[9px] relative overflow-hidden h-36 flex flex-col justify-between"
+          >
+            <div
+              class="flex items-center justify-between border-b border-slate-800 pb-1"
+            >
+              <span class="text-slate-400">Mostrador Tienda 1</span>
+              <span class="text-orange-300 animate-pulse">Tránsito Activo</span>
+            </div>
+            <!-- Dynamic Simulation Graphic -->
+            <div class="space-y-1 py-1">
+              <div class="flex justify-between text-[8px]">
+                <span class="text-slate-400">Pastilla Frenos Hilux</span>
+                <span class="text-slate-200">Cant: 4</span>
+              </div>
+              <div
+                class="w-full bg-slate-950 border border-slate-800 p-1 flex justify-between items-center text-[8px] text-orange-300"
+              >
+                <span>Generando Boleta F001-341...</span>
+                <span>SUNAT OK</span>
+              </div>
+              <div class="relative h-3 text-[7px] mt-1 text-left">
+                <div
+                  class="absolute inset-0 text-slate-400 italic animate-[fadeOut_4s_infinite]"
+                >
+                  &gt; Esperando factura compra local...
+                </div>
+                <div
+                  class="absolute inset-0 text-green-400 font-semibold animate-[fadeIn_4s_infinite]"
+                >
+                  &gt; OK: inventario sincronizado
+                </div>
+              </div>
+            </div>
+            <div class="w-full h-1 bg-slate-950 rounded overflow-hidden">
+              <div
+                class="h-full bg-brand-secondary animate-[pillar1-bar_4s_infinite]"
+              >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div
+          class="bg-slate-950 border border-slate-800 rounded-lg p-6 flex flex-col justify-between space-y-6 hover:border-slate-700/80 transition-all"
+        >
+          <div class="space-y-4">
+            <span
+              class="text-xs font-bold text-orange-300 uppercase tracking-wider block"
+              >Pilar 2</span
+            >
+            <h3 class="text-lg font-bold text-white">
+              Control de Utilidad en Vivo y Lista Madre
+            </h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              El vendedor ve el margen en tiempo real. Si intenta bajar el
+              precio del repuesto por debajo del mínimo establecido, el sistema
+              se bloquea y solicita autorización del supervisor. Si modificas el
+              costo de compra, se actualizan en cascada las listas de precios de
+              todas tus sucursales.
+            </p>
+          </div>
+
+          <!-- Micro Animation 2 -->
+          <div
+            class="bg-slate-900 border border-slate-800/80 rounded p-4.5 font-mono text-[9px] relative overflow-hidden h-36 flex flex-col justify-between"
+          >
+            <div
+              class="flex items-center justify-between border-b border-slate-800 pb-1"
+            >
+              <span class="text-slate-400">Editor de Pedido</span>
+              <span class="text-utility-danger font-bold text-[8px]"
+                >MARGEN BAJO (14%)</span
+              >
+            </div>
+            <!-- Margen Block simulation -->
+            <div class="space-y-1.5 py-1 text-[8px]">
+              <div class="flex justify-between">
+                <span class="text-slate-400">Pistón Toyota 2C</span>
+                <span class="text-slate-300">S/. 120.00</span>
+              </div>
+              <div
+                class="w-full bg-red-950/20 border border-utility-danger/30 text-utility-danger p-1 rounded text-center"
+              >
+                BLOQUEADO: Ingrese Clave Supervisor
+              </div>
+              <div class="flex justify-center gap-1">
+                <span
+                  class="bg-slate-950 px-1 py-0.5 border border-slate-850 text-slate-400 rounded"
+                  >*</span
+                >
+                <span
+                  class="bg-slate-950 px-1 py-0.5 border border-slate-850 text-slate-400 rounded"
+                  >*</span
+                >
+                <span
+                  class="bg-slate-950 px-1 py-0.5 border border-slate-850 text-slate-400 rounded"
+                  >*</span
+                >
+                <span
+                  class="bg-slate-950 px-1 py-0.5 border border-slate-850 text-slate-400 rounded"
+                  >*</span
+                >
+              </div>
+            </div>
+            <div
+              class="flex justify-between items-center text-[7px] text-slate-400"
+            >
+              <span>Lista Madre: Tienda Principal</span>
+              <span>v2.1</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div
+          class="bg-slate-950 border border-slate-800 rounded-lg p-6 flex flex-col justify-between space-y-6 hover:border-slate-700/80 transition-all"
+        >
+          <div class="space-y-4">
+            <span
+              class="text-xs font-bold text-orange-300 uppercase tracking-wider block"
+              >Pilar 3</span
+            >
+            <h3 class="text-lg font-bold text-white">
+              Costeo de Importación en un Clic
+            </h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Jubila las hojas de Excel de importación. Calcula el costo
+              promedio de tus repuestos importados mediante 4 métodos
+              automáticos: Factor, Volumen, Importe o Cantidad. Todo integrado
+              con tus DUA e impuestos de nacionalización al instante.
+            </p>
+          </div>
+
+          <!-- Micro Animation 3 -->
+          <div
+            class="bg-slate-900 border border-slate-800/80 rounded p-4.5 font-mono text-[9px] relative overflow-hidden h-36 flex flex-col justify-between"
+          >
+            <div
+              class="flex items-center justify-between border-b border-slate-800 pb-1"
+            >
+              <span class="text-slate-400">Costo de Importación</span>
+              <span class="text-green-400 font-semibold text-[8px]"
+                >Flete e Impuestos</span
+              >
+            </div>
+            <!-- Selection loop -->
+            <div class="space-y-1.5 py-1 text-[8px]">
+              <div class="grid grid-cols-2 gap-1 text-center">
+                <span
+                  class="bg-brand-secondary text-slate-950 font-bold py-0.5 rounded text-[7px]"
+                  >✓ FACTOR</span
+                >
+                <span
+                  class="bg-slate-950 text-slate-400 py-0.5 border border-slate-800 rounded text-[7px]"
+                  >VOLUMEN</span
+                >
+                <span
+                  class="bg-slate-950 text-slate-400 py-0.5 border border-slate-800 rounded text-[7px]"
+                  >IMPORTE</span
+                >
+                <span
+                  class="bg-slate-950 text-slate-400 py-0.5 border border-slate-800 rounded text-[7px]"
+                  >CANTIDAD</span
+                >
+              </div>
+              <div
+                class="flex justify-between border-t border-slate-850 pt-1 text-[8px]"
+              >
+                <span class="text-slate-400">Costo FOB Unitario:</span>
+                <span class="text-slate-200">$ 4.50</span>
+              </div>
+              <div class="flex justify-between font-bold text-green-400">
+                <span>Costo Almacén:</span>
+                <span>$ 5.92</span>
+              </div>
+            </div>
+            <div class="text-[7px] text-slate-400 text-center">
+              Prorrateo de DUA automatizado en un clic.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRUEBA DE FUEGO (Validación y Autoridad) -->
+  <section
+    id="prueba-fuego"
+    class="py-20 bg-slate-950 border-b border-slate-900"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+        <span class="text-xs font-bold text-orange-300 uppercase tracking-wider"
+          >Validación de Sector</span
+        >
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+          Validado en el mostrador de los líderes del sector automotor en el
+          Perú.
+        </h2>
+        <p class="text-slate-400 text-sm">
+          No somos un software improvisado. Contamos con el respaldo operativo
+          de empresas que facturan millones y exigen un control milimétrico.
+        </p>
+      </div>
+
+      <!-- Testimonial Block & Logos Grid -->
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-8 border-t border-slate-900"
+      >
+        <!-- Logos Grid (Clickable buttons) -->
+        <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+          <!-- Logo 1: M&M (Active by default) -->
+          <button
+            type="button"
+            class="testimonial-btn bg-slate-800/50 border border-orange-300 rounded p-6 flex flex-col items-center justify-center h-24 hover:border-orange-300/80 transition-all text-center focus:outline-none cursor-pointer scale-105"
+            data-target="mm"
+            aria-label="Ver testimonio de M&M Repuestos"
+          >
+            <span class="text-base font-bold text-slate-100 tracking-wider"
+              >M&M REPUESTOS</span
+            >
+            <span class="text-[8px] font-mono text-slate-400"
+              >AUTOPARTES PE</span
+            >
+          </button>
+          <!-- Logo 2: Autorex -->
+          <button
+            type="button"
+            class="testimonial-btn bg-slate-900 border border-slate-800 rounded p-6 flex flex-col items-center justify-center h-24 hover:border-orange-300/80 transition-all text-center focus:outline-none cursor-pointer"
+            data-target="autorex"
+            aria-label="Ver testimonio de Autorex"
+          >
+            <span class="text-base font-bold text-orange-300 tracking-widest"
+              >AUTOREX</span
+            >
+            <span class="text-[8px] font-mono text-slate-400"
+              >LÍDER NACIONAL</span
+            >
+          </button>
+          <!-- Logo 3: Epizentrum -->
+          <button
+            type="button"
+            class="testimonial-btn bg-slate-900 border border-slate-800 rounded p-6 flex flex-col items-center justify-center h-24 hover:border-orange-300/80 transition-all text-center focus:outline-none cursor-pointer"
+            data-target="epizentrum"
+            aria-label="Ver testimonio de Epizentrum"
+          >
+            <span
+              class="text-base font-bold text-slate-100 font-mono tracking-widest text-center"
+              >EPIZENTRUM</span
+            >
+            <span class="text-[8px] font-mono text-slate-400"
+              >IMPORTADOR DIRECTO</span
+            >
+          </button>
+          <!-- Logo 4: Nissan Motors -->
+          <button
+            type="button"
+            class="testimonial-btn bg-slate-900 border border-slate-800 rounded p-6 flex flex-col items-center justify-center h-24 hover:border-orange-300/80 transition-all text-center focus:outline-none cursor-pointer"
+            data-target="nissan"
+            aria-label="Ver testimonio de Nissan Motors"
+          >
+            <span
+              class="text-base font-bold text-slate-100 tracking-wide text-center"
+              >NISSAN MOTORS</span
+            >
+            <span class="text-[8px] font-mono text-orange-300"
+              >RED DE TIENDAS</span
+            >
+          </button>
+          <!-- Logo 5: Andy Ber -->
+          <button
+            type="button"
+            class="testimonial-btn bg-slate-900 border border-slate-800 rounded p-6 flex flex-col items-center justify-center h-24 hover:border-orange-300/80 transition-all text-center focus:outline-none cursor-pointer"
+            data-target="andyber"
+            aria-label="Ver testimonio de Andy Ber"
+          >
+            <span
+              class="text-base font-bold text-slate-100 tracking-wide text-center"
+              >ANDY BER</span
+            >
+            <span class="text-[8px] font-mono text-slate-400"
+              >DISTRIBUIDOR REGIONAL</span
+            >
+          </button>
+          <!-- Logo 6: Mat Service Lift Truck -->
+          <button
+            type="button"
+            class="testimonial-btn bg-slate-900 border border-slate-800 rounded p-6 flex flex-col items-center justify-center h-24 hover:border-orange-300/80 transition-all text-center focus:outline-none cursor-pointer"
+            data-target="matservice"
+            aria-label="Ver testimonio de Mat Service Lift Truck"
+          >
+            <span
+              class="text-[10px] font-bold text-slate-100 tracking-tight text-center leading-tight uppercase"
+              >MAT SERVICE LIFT TRUCK</span
+            >
+            <span class="text-[8px] font-mono text-slate-400"
+              >MAQUINARIA INDUSTRIAL</span
+            >
+          </button>
+        </div>
+
+        <!-- Testimonial Quote -->
+        <div
+          class="lg:col-span-7 bg-slate-900 border border-orange-300/35 rounded-xl p-8 relative min-h-[240px] flex flex-col justify-center"
+        >
+          <!-- Developer Reminder Badge -->
+          <div
+            class="absolute top-4 left-6 bg-orange-950/60 border border-orange-400/30 text-orange-300 text-[8px] px-2 py-0.5 rounded font-mono flex items-center gap-1.5 z-10"
+          >
+            <span class="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse"
+            ></span>
+            ⚠️ RECORDATORIO: Reemplazar borradores por testimonios reales de clientes
+          </div>
+
+          <!-- Quote Icon -->
+          <span
+            class="absolute top-4 right-6 text-7xl font-serif text-orange-300/15 select-none font-bold"
+            >“</span
+          >
+
+          <!-- MM Content (Visible by default) -->
+          <div
+            id="testi-mm"
+            class="testimonial-pane space-y-4 pt-4 transition-opacity duration-300"
+          >
+            <p
+              class="text-sm sm:text-base text-slate-200 leading-relaxed font-medium italic"
+            >
+              Con Exacta ERP logramos absorber el stock negativo en mostrador de
+              forma ordenada. Hoy nuestro Inventario Permanente Valorizado para
+              la SUNAT cuadra al centavo y vemos la rentabilidad en línea todos
+              los días.
+            </p>
+            <div class="flex items-center gap-3 pt-2">
+              <div
+                class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-orange-300 text-sm"
+              >
+                MM
+              </div>
+              <div>
+                <span class="text-xs font-bold text-white block"
+                  >Gerencia de Operaciones</span
+                >
+                <span class="text-[10px] text-slate-400 font-mono block"
+                  >M&M Repuestos y Distribuciones SAC</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Autorex Content (Hidden by default) -->
+          <div
+            id="testi-autorex"
+            class="testimonial-pane space-y-4 pt-4 hidden transition-opacity duration-300 opacity-0"
+          >
+            <p
+              class="text-sm sm:text-base text-slate-200 leading-relaxed font-medium italic"
+            >
+              Controlar las compatibilidades de más de 30,000 repuestos sin que
+              los vendedores se confundan redujo nuestras devoluciones en un
+              40%. La consulta en mostrador es instantánea.
+            </p>
+            <div class="flex items-center gap-3 pt-2">
+              <div
+                class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-orange-300 text-sm"
+              >
+                AR
+              </div>
+              <div>
+                <span class="text-xs font-bold text-white block"
+                  >Dirección Comercial</span
+                >
+                <span class="text-[10px] text-slate-400 font-mono block"
+                  >Autorex Peruana SA</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Epizentrum Content (Hidden by default) -->
+          <div
+            id="testi-epizentrum"
+            class="testimonial-pane space-y-4 pt-4 hidden transition-opacity duration-300 opacity-0"
+          >
+            <p
+              class="text-sm sm:text-base text-slate-200 leading-relaxed font-medium italic"
+            >
+              El módulo de nacionalización y prorrateo de DUA nos ahorró
+              incontables horas de hojas de cálculo de fletes. Ahora costeamos
+              importaciones masivas en un solo clic.
+            </p>
+            <div class="flex items-center gap-3 pt-2">
+              <div
+                class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-orange-300 text-sm"
+              >
+                EP
+              </div>
+              <div>
+                <span class="text-xs font-bold text-white block"
+                  >Jefe de Logística & Importaciones</span
+                >
+                <span class="text-[10px] text-slate-400 font-mono block"
+                  >Epizentrum SAC</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Nissan Motors Content (Hidden by default) -->
+          <div
+            id="testi-nissan"
+            class="testimonial-pane space-y-4 pt-4 hidden transition-opacity duration-300 opacity-0"
+          >
+            <p
+              class="text-sm sm:text-base text-slate-200 leading-relaxed font-medium italic"
+            >
+              Controlar el margen mínimo en vivo evitó que los vendedores
+              regalen la utilidad en mostrador de repuestos originales. Las
+              sucursales se sincronizan al segundo.
+            </p>
+            <div class="flex items-center gap-3 pt-2">
+              <div
+                class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-orange-300 text-sm"
+              >
+                NS
+              </div>
+              <div>
+                <span class="text-xs font-bold text-white block"
+                  >Supervisor de Repuestos</span
+                >
+                <span class="text-[10px] text-slate-400 font-mono block"
+                  >Nissan Motors (Red de Tiendas)</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Andy Ber Content (Hidden by default) -->
+          <div
+            id="testi-andyber"
+            class="testimonial-pane space-y-4 pt-4 hidden transition-opacity duration-300 opacity-0"
+          >
+            <p
+              class="text-sm sm:text-base text-slate-200 leading-relaxed font-medium italic"
+            >
+              La integración con SUNAT y la facturación inmediata en mostrador
+              nos quitó un gran peso de encima. Ahora el cierre de caja diario
+              es automático y cuadra sin contratiempos.
+            </p>
+            <div class="flex items-center gap-3 pt-2">
+              <div
+                class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-orange-300 text-sm"
+              >
+                AB
+              </div>
+              <div>
+                <span class="text-xs font-bold text-white block"
+                  >Gerencia Administrativa</span
+                >
+                <span class="text-[10px] text-slate-400 font-mono block"
+                  >Andy Ber SAC</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Mat Service Lift Truck Content (Hidden by default) -->
+          <div
+            id="testi-matservice"
+            class="testimonial-pane space-y-4 pt-4 hidden transition-opacity duration-300 opacity-0"
+          >
+            <p
+              class="text-sm sm:text-base text-slate-200 leading-relaxed font-medium italic"
+            >
+              Administrar miles de códigos de repuestos para montacargas con
+              diferentes marcas y compatibilidades era un infierno. Con Exacta,
+              la consulta en el mostrador es veloz e infalible.
+            </p>
+            <div class="flex items-center gap-3 pt-2">
+              <div
+                class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-orange-300 text-sm"
+              >
+                MS
+              </div>
+              <div>
+                <span class="text-xs font-bold text-white block"
+                  >Jefatura de Almacén</span
+                >
+                <span class="text-[10px] text-slate-400 font-mono block"
+                  >Mat Service Lift Truck E.I.R.L.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DERRIBO DE OBJECIONES (Preguntas Frecuentes) -->
+  <section
+    id="preguntas-frecuentes"
+    class="py-20 bg-slate-900 border-b border-slate-800"
+  >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-16 space-y-4">
+        <span class="text-xs font-bold text-orange-300 uppercase tracking-wider"
+          >Despeja tus dudas</span
+        >
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">
+          Preguntas Frecuentes
+        </h2>
+        <p class="text-slate-400 text-sm">
+          Respondemos tus preocupaciones operativas antes de que agendes la
+          visita de diagnóstico.
+        </p>
+      </div>
+
+      <!-- Accordion Interface -->
+      <div class="space-y-4" id="faq-accordion">
+        <!-- FAQ item 1 -->
+        <div
+          class="border border-slate-800 rounded bg-slate-950/80 overflow-hidden"
+        >
+          <button
+            class="faq-trigger w-full px-6 py-4 flex items-center justify-between text-left text-sm sm:text-base font-bold text-slate-100 hover:text-white transition-colors cursor-pointer outline-none"
+            data-target="faq-ans-1"
+          >
+            <span>¿Tengo que parar mi mostrador para implementar?</span>
+            <span
+              class="text-orange-300 text-lg font-mono leading-none font-bold faq-icon"
+              >+</span
+            >
+          </button>
+          <div
+            id="faq-ans-1"
+            class="faq-content max-h-0 overflow-hidden transition-all duration-350 ease-in-out"
+          >
+            <p
+              class="px-6 pb-5 pt-1 text-xs sm:text-sm text-slate-400 leading-relaxed"
+            >
+              No. Exacta ERP se implementa en paralelo usando tus datos
+              históricos sin detener un solo minuto tu venta diaria. Nuestro
+              equipo de ingenieros comerciales se encarga de migrar tus
+              repuestos, compatibilidades y clientes mientras tu negocio sigue
+              operando.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ item 2 -->
+        <div
+          class="border border-slate-800 rounded bg-slate-950/80 overflow-hidden"
+        >
+          <button
+            class="faq-trigger w-full px-6 py-4 flex items-center justify-between text-left text-sm sm:text-base font-bold text-slate-100 hover:text-white transition-colors cursor-pointer outline-none"
+            data-target="faq-ans-2"
+          >
+            <span
+              >¿Qué pasa si la conectividad o el internet de mi zona es lento?</span
+            >
+            <span
+              class="text-orange-300 text-lg font-mono leading-none font-bold faq-icon"
+              >+</span
+            >
+          </button>
+          <div
+            id="faq-ans-2"
+            class="faq-content max-h-0 overflow-hidden transition-all duration-350 ease-in-out"
+          >
+            <p
+              class="px-6 pb-5 pt-1 text-xs sm:text-sm text-slate-400 leading-relaxed"
+            >
+              El sistema está diseñado con una arquitectura optimizada para la
+              realidad del comercio local, permitiendo artificios de facturación
+              inmediata que no dependen de conexiones de alta velocidad. Si se
+              corta el internet, puedes seguir digitando en mostrador sin
+              congelar la venta.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ item 3 -->
+        <div
+          class="border border-slate-800 rounded bg-slate-950/80 overflow-hidden"
+        >
+          <button
+            class="faq-trigger w-full px-6 py-4 flex items-center justify-between text-left text-sm sm:text-base font-bold text-slate-100 hover:text-white transition-colors cursor-pointer outline-none"
+            data-target="faq-ans-3"
+          >
+            <span>¿Viene listo para las exigencias de la SUNAT?</span>
+            <span
+              class="text-orange-300 text-lg font-mono leading-none font-bold faq-icon"
+              >+</span
+            >
+          </button>
+          <div
+            id="faq-ans-3"
+            class="faq-content max-h-0 overflow-hidden transition-all duration-350 ease-in-out"
+          >
+            <p
+              class="px-6 pb-5 pt-1 text-xs sm:text-sm text-slate-400 leading-relaxed"
+            >
+              Sí, incluye de forma nativa todos los libros electrónicos y los
+              reportes financieros bajo los estándares vigentes de la SUNAT,
+              automatizados en tiempo real y sin necesidad de procesos de
+              cierre. Emite Boletas, Facturas y Guías de Remisión Remitente
+              directo al mostrador.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE IRRESISTIBLE (Oferta Grand Slam) -->
+  <section
+    id="oferta"
+    class="py-24 bg-gradient-to-b from-slate-950 to-slate-900 relative"
+  >
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-16 space-y-4">
+        <span class="text-xs font-bold text-orange-300 uppercase tracking-wider"
+          >La Decisión Correcta</span
+        >
+        <h2 class="text-3xl sm:text-4xl font-bold text-white">
+          Oferta de Implementación Express
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
+          Eliminamos tu riesgo operativo a cero. Nos encargamos de todo el
+          trabajo pesado para que solo te preocupes de vender.
+        </p>
+      </div>
+
+      <!-- Pricing / Offer Grand Slam Box -->
+      <div
+        class="bg-slate-900 border border-brand-secondary/40 rounded-2xl overflow-hidden shadow-2xl"
+      >
+        <!-- Header of Box -->
+        <div
+          class="bg-slate-950 p-6 sm:p-8 border-b border-slate-800 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4"
+        >
+          <div class="space-y-1">
+            <span
+              class="text-[10px] font-bold text-orange-300 uppercase tracking-wider block"
+              >PAQUETE LLAVE EN MANO</span
+            >
+            <h3 class="text-xl font-bold text-white">
+              Software Exacta + Consultoría de Margen
+            </h3>
+          </div>
+        </div>
+
+        <div
+          class="p-6 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start"
+        >
+          <!-- List of inclusions -->
+          <div class="space-y-4">
+            <h4 class="text-sm font-bold text-white">
+              ¿Qué incluye tu plan personalizado?
+            </h4>
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+              <li class="flex items-start gap-2.5">
+                <span
+                  class="w-5 h-5 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center text-green-400 text-xs font-bold mt-0.5"
+                  >✓</span
+                >
+                <span
+                  ><strong>Software Exacta ERP:</strong> Licencia mostrador ilimitada
+                  para tus vendedores.</span
+                >
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span
+                  class="w-5 h-5 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center text-green-400 text-xs font-bold mt-0.5"
+                  >✓</span
+                >
+                <span
+                  ><strong>Consultoría de Políticas de Margen:</strong> Estructuración
+                  inicial de algoritmos de precios por tienda.</span
+                >
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span
+                  class="w-5 h-5 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center text-green-400 text-xs font-bold mt-0.5"
+                  >✓</span
+                >
+                <span
+                  ><strong>Módulo SUNAT Completo:</strong> Libros electrónicos y facturación
+                  sin cierres mensuales.</span
+                >
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span
+                  class="w-5 h-5 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center text-green-400 text-xs font-bold mt-0.5"
+                  >✓</span
+                >
+                <span
+                  ><strong>Módulo de Importaciones Automático:</strong> Métodos de
+                  costeo en 1 clic.</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Promise, Warranty & CTA -->
+          <div
+            class="space-y-5 bg-slate-950/80 p-5 rounded-lg border border-slate-800"
+          >
+            <div class="space-y-1">
+              <span
+                class="text-[10px] font-bold text-orange-300 uppercase tracking-wider block"
+                >Garantía Real</span
+              >
+              <p
+                class="text-xs text-slate-300 leading-relaxed font-medium italic"
+              >
+                "Garantía de Integridad Fiscal: Garantizamos que la arquitectura
+                de Exacta ERP genera y exporta tus Libros Electrónicos e
+                Inventario Permanente Valorizado en estricto cumplimiento con
+                las estructuras técnicas vigentes de la SUNAT."
+              </p>
+            </div>
+
+            <!-- Quote Target Display -->
+            <div class="pt-3 border-t border-slate-850">
+              <span class="text-[10px] text-slate-400 font-mono block"
+                >COTIZACIÓN B2B PREFERENCIAL</span
+              >
+              <span class="text-xs font-bold text-slate-100"
+                >Solicitud de cotización de acuerdo a tu volumen operativo.</span
+              >
+            </div>
+
+            <!-- Big Call to Action -->
+            <a
+              id="grand-slam-cta"
+              href="https://wa.me/51999647337?text=Hola%20Exacta%20ERP,%20deseo%20solicitar%20una%20cotizaci%C3%B3n%20personalizada%20para%20mi%20distribuidora%20de%20repuestos."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center py-3.5 px-4 bg-brand-secondary hover:bg-brand-secondary-hover text-slate-950 font-bold text-sm uppercase tracking-wider rounded transition-all hover:scale-[1.02] text-center"
+            >
+              Pedir Cotización Personalizada
+            </a>
+
+            <p class="text-[10px] text-center text-slate-400">
+              Implementación Express garantizada en 30 días hábiles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Bottom Float Bar (Appears on Scroll) -->
+  <div
+    id="sticky-bar"
+    class="fixed bottom-0 left-0 right-0 z-40 bg-slate-950/95 border-t border-slate-800 py-3.5 px-4 sm:px-6 shadow-2xl backdrop-blur-md transform translate-y-24 transition-transform duration-300"
+  >
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      <div class="hidden sm:block">
+        <span class="text-xs font-bold text-white block"
+          >¿Listo para vender sin stock negativo?</span
+        >
+        <span class="text-[10px] text-slate-400"
+          >Absorbe stock de plaza de forma legal e inmediata.</span
+        >
+      </div>
+      <a
+        href="https://wa.me/51999647337?text=Hola%20Exacta%20ERP,%2520deseo%2520solicitar%2520una%2520demo%2520por%2520WhatsApp%2520visto%2520en%2520mostrador."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex-1 sm:flex-none inline-flex items-center justify-center py-2 px-5 bg-brand-secondary hover:bg-brand-secondary-hover text-slate-950 font-bold text-xs sm:text-sm rounded transition-all"
+      >
+        Probar ERP en mi Local
+      </a>
+    </div>
+  </div>
+
+  <!-- Interactive Widgets -->
+  <ContactWidget />
+</LandingLayout>
+
+<script>
+  // VSL INTERACTIVE YOUTUBE PLAYER
+  const playBtn = document.getElementById("vsl-play-btn");
+  const thumbnail = document.getElementById("vsl-thumbnail");
+  const iframe = document.getElementById("vsl-iframe") as HTMLIFrameElement;
+  const closeVideoBtn = document.getElementById("vsl-close-btn");
+
+  playBtn?.addEventListener("click", () => {
+    if (thumbnail && iframe && playBtn && closeVideoBtn) {
+      // Hide play button and thumbnail
+      playBtn.classList.add("hidden");
+      thumbnail.classList.add("opacity-0");
+      setTimeout(() => {
+        thumbnail.classList.add("hidden");
+        // Load and show youtube video using nocookie and anti-distraction parameters
+        iframe.src =
+          "https://www.youtube-nocookie.com/embed/CA_VNI0L_88?autoplay=1&controls=0&rel=0&modestbranding=1";
+        iframe.classList.remove("hidden");
+        closeVideoBtn.classList.remove("hidden");
+      }, 300);
+    }
+  });
+
+  closeVideoBtn?.addEventListener("click", () => {
+    if (thumbnail && iframe && playBtn && closeVideoBtn) {
+      // Stop video immediately by resetting src
+      iframe.src = "";
+      iframe.classList.add("hidden");
+      closeVideoBtn.classList.add("hidden");
+
+      // Restore thumbnail and play button
+      thumbnail.classList.remove("hidden");
+      setTimeout(() => {
+        thumbnail.classList.remove("opacity-0");
+        playBtn.classList.remove("hidden");
+      }, 50);
+    }
+  });
+
+  // ACCORDION Q&A TOGGLER
+  document.querySelectorAll(".faq-trigger").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const btn = e.currentTarget as HTMLButtonElement;
+      const targetId = btn.dataset.target || "";
+      const content = document.getElementById(targetId);
+      const icon = btn.querySelector(".faq-icon");
+
+      if (content && icon) {
+        const isOpen =
+          content.style.maxHeight && content.style.maxHeight !== "0px";
+
+        // Close all other accordions first (Single accordion mode)
+        document.querySelectorAll(".faq-content").forEach((el) => {
+          (el as HTMLElement).style.maxHeight = "0px";
+        });
+        document.querySelectorAll(".faq-icon").forEach((el) => {
+          (el as HTMLElement).textContent = "+";
+        });
+
+        if (!isOpen) {
+          content.style.maxHeight = `${content.scrollHeight}px`;
+          icon.textContent = "−";
+        } else {
+          content.style.maxHeight = "0px";
+          icon.textContent = "+";
+        }
+      }
+    });
+  });
+
+  // TESTIMONIALS TOGGLER
+  const testimonialButtons = document.querySelectorAll(".testimonial-btn");
+  const testimonialPanes = document.querySelectorAll(".testimonial-pane");
+
+  testimonialButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.getAttribute("data-target");
+
+      // Update button active state classes
+      testimonialButtons.forEach((b) => {
+        const isCurrent = b === btn;
+        b.classList.toggle("border-orange-300", isCurrent);
+        b.classList.toggle("bg-slate-800/50", isCurrent);
+        b.classList.toggle("scale-105", isCurrent);
+        b.classList.toggle("border-slate-800", !isCurrent);
+        b.classList.toggle("bg-slate-900", !isCurrent);
+        b.classList.toggle("scale-100", !isCurrent);
+      });
+
+      // Update panes with hidden/visible transitions
+      testimonialPanes.forEach((pane) => {
+        const paneId = pane.getAttribute("id");
+        if (paneId === `testi-${targetId}`) {
+          pane.classList.remove("hidden");
+          setTimeout(() => {
+            pane.classList.remove("opacity-0");
+          }, 20);
+        } else {
+          pane.classList.add("opacity-0");
+          pane.classList.add("hidden");
+        }
+      });
+    });
+  });
+
+  // SCROLL-CONTROLLED STICKY BOTTOM BAR
+  const stickyBar = document.getElementById("sticky-bar");
+  const contactWidget = document.getElementById("contact-widget-container");
+
+  window.addEventListener("scroll", () => {
+    if (stickyBar) {
+      // Show when user scrolls down past hero (e.g. 600px)
+      if (window.scrollY > 600) {
+        stickyBar.classList.remove("translate-y-24");
+        stickyBar.classList.add("translate-y-0");
+
+        // Shift floating elements up to avoid overlap with sticky bar
+        if (contactWidget) {
+          contactWidget.classList.remove("bottom-6");
+          contactWidget.classList.add("bottom-24");
+        }
+      } else {
+        stickyBar.classList.remove("translate-y-0");
+        stickyBar.classList.add("translate-y-24");
+
+        // Restore floating elements down
+        if (contactWidget) {
+          contactWidget.classList.remove("bottom-24");
+          contactWidget.classList.add("bottom-6");
+        }
+      }
+    }
+  });
+</script>
+
+<style>
+  /* Local utility animation for simple infinite loader */
+  @keyframes loading {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes fadeOut {
+    0%,
+    49.9% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeIn {
+    0%,
+    49.9% {
+      opacity: 0;
+    }
+    50%,
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes pillar1-bar {
+    0% {
+      width: 0%;
+      background-color: #f27427; /* brand-secondary orange */
+    }
+    50% {
+      width: 100%;
+      background-color: #34d399; /* green-400 */
+    }
+    100% {
+      width: 100%;
+      background-color: #34d399; /* green-400 */
+    }
+  }
+</style>

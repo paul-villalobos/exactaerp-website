@@ -1,0 +1,314 @@
+---
+---
+<div id="contact-widget-container" class="fixed bottom-6 right-6 z-50 flex flex-col items-end transition-all duration-300">
+  <!-- Interactive Scheduler Drawer Panel -->
+  <div
+    id="scheduler-drawer"
+    class="w-80 sm:w-96 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-5 mb-4 max-h-[500px] overflow-y-auto transform scale-95 opacity-0 pointer-events-none origin-bottom-right transition-all duration-300 ease-out"
+  >
+    <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+      <div>
+        <h4 class="text-sm font-bold text-white">Conversa con Exacta ERP</h4>
+        <p class="text-[10px] text-slate-400">Atención directa por ingenieros comerciales, no bots</p>
+      </div>
+      <button id="close-drawer" class="text-slate-400 hover:text-slate-200 transition-colors cursor-pointer" aria-label="Cerrar panel de contacto">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Toggle Buttons: Options A & B -->
+    <div class="grid grid-cols-2 gap-2 mb-4">
+      <button
+        id="btn-opt-chat"
+        class="text-xs py-2 px-3 text-center rounded-md font-semibold bg-brand-primary text-white transition-all cursor-pointer"
+      >
+        Chat Directo
+      </button>
+      <button
+        id="btn-opt-schedule"
+        class="text-xs py-2 px-3 text-center rounded-md font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all cursor-pointer"
+      >
+        Agendar Visita
+      </button>
+    </div>
+
+    <!-- SECTION: Option A (Direct Chat) -->
+    <div id="content-chat" class="space-y-4">
+      <p class="text-xs text-slate-300 leading-relaxed">
+        ¿Tienes una consulta inmediata sobre el Almacén de Tránsito o la SUNAT? Conéctate directo con un especialista.
+      </p>
+      <a
+        href="https://wa.me/51999647337?text=Hola%20Exacta%20ERP,%20deseo%20hacer%20una%20consulta%20comercial%20en%20vivo%20sobre%20mi%20repuestera."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full inline-flex items-center justify-center py-2.5 px-4 rounded bg-utility-success hover:bg-utility-success/90 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all"
+      >
+        <!-- WhatsApp Icon -->
+        <svg class="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.863-9.864.002-2.634-1.02-5.11-2.884-6.978C16.578 1.897 14.1 .874 11.482.874 6.044.874 1.622 5.293 1.62 10.733c-.001 1.739.46 3.43 1.333 4.937L1.922 20.3l4.725-1.146zm11.378-6.196c-.302-.151-1.785-.882-2.057-.981-.273-.099-.471-.148-.669.151-.197.297-.767.966-.94 1.164-.173.199-.347.223-.649.072-.302-.15-1.272-.469-2.423-1.496-.895-.798-1.5-.178-1.785-.328-.287-.15-.03-.233.243-.506.244-.244.347-.396.52-.66.173-.264.086-.495-.043-.649-.129-.152-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.568-.01-.197 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.785-.73 2.037-1.435.252-.706.252-1.312.177-1.435-.077-.122-.273-.196-.576-.347z"/>
+        </svg>
+        Iniciar Chat de WhatsApp
+      </a>
+    </div>
+
+    <!-- SECTION: Option B (Schedule Visit Assistant) -->
+    <div id="content-schedule" class="hidden space-y-4">
+      <div id="wizard-step-1" class="space-y-3">
+        <span class="text-[10px] font-bold text-orange-300 uppercase tracking-wider block">Paso 1: Elige la fecha</span>
+        <div class="grid grid-cols-3 gap-2" id="date-grid">
+          <!-- Calendar Days inserted by JS -->
+        </div>
+      </div>
+
+      <div id="wizard-step-2" class="hidden space-y-3">
+        <span class="text-[10px] font-bold text-orange-300 uppercase tracking-wider block">Paso 2: Elige el turno</span>
+        <div class="grid grid-cols-2 gap-2" id="slot-grid">
+          <button class="time-slot-btn text-xs py-2 px-1 text-center rounded border border-slate-800 bg-slate-950 hover:bg-slate-800 transition-all cursor-pointer" data-time="9:00 AM (Mañana)">
+            9:00 AM
+          </button>
+          <button class="time-slot-btn text-xs py-2 px-1 text-center rounded border border-slate-800 bg-slate-950 hover:bg-slate-800 transition-all cursor-pointer" data-time="11:30 AM (Mostrador Activo)">
+            11:30 AM
+          </button>
+          <button class="time-slot-btn text-xs py-2 px-1 text-center rounded border border-slate-800 bg-slate-950 hover:bg-slate-800 transition-all cursor-pointer" data-time="3:00 PM (Tarde)">
+            3:00 PM
+          </button>
+          <button class="time-slot-btn text-xs py-2 px-1 text-center rounded border border-slate-800 bg-slate-950 hover:bg-slate-800 transition-all cursor-pointer" data-time="5:00 PM (Cierre Caja)">
+            5:00 PM
+          </button>
+        </div>
+        <button id="back-to-step1" class="text-[10px] text-slate-400 hover:text-slate-200 flex items-center gap-1 mt-1 cursor-pointer">
+          ← Volver a fechas
+        </button>
+      </div>
+
+      <div id="wizard-step-3" class="hidden space-y-3">
+        <span class="text-[10px] font-bold text-orange-300 uppercase tracking-wider block">Paso 3: Datos de tu Local</span>
+        <div class="space-y-2">
+          <div>
+            <label class="block text-[10px] text-slate-400 mb-0.5">Nombre de la Repuestera / Empresa</label>
+            <input
+              type="text"
+              id="schedule-shop"
+              placeholder="Ej. Repuestos El Veloz"
+              class="w-full bg-slate-950 border border-slate-800 rounded p-2 focus:border-brand-secondary outline-none text-xs text-slate-100"
+            />
+          </div>
+          <div>
+            <label class="block text-[10px] text-slate-400 mb-0.5">Tu Nombre y Celular</label>
+            <input
+              type="text"
+              id="schedule-contact"
+              placeholder="Ej. Juan Pérez - 987654321"
+              class="w-full bg-slate-950 border border-slate-800 rounded p-2 focus:border-brand-secondary outline-none text-xs text-slate-100"
+            />
+          </div>
+        </div>
+        <div class="flex items-center gap-2 pt-1.5">
+          <button id="back-to-step2" class="text-[10px] text-slate-400 hover:text-slate-200 cursor-pointer">
+            ← Volver
+          </button>
+          <button
+            id="btn-confirm-schedule"
+            class="flex-1 py-2 px-4 bg-brand-secondary hover:bg-brand-secondary-hover text-slate-950 font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer"
+          >
+            Confirmar en WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Sticky Bubble Trigger Button -->
+  <button
+    id="scheduler-trigger"
+    class="w-14 h-14 rounded-full bg-brand-secondary hover:bg-brand-secondary-hover text-slate-950 flex items-center justify-center shadow-lg shadow-brand-secondary/30 transition-transform duration-200 hover:scale-110 active:scale-95 cursor-pointer relative group"
+    aria-label="Abrir programador de visitas y contacto"
+  >
+    <!-- Icon representing conversation/calendar -->
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+    </svg>
+    <!-- Notification Dot -->
+    <span class="absolute top-0 right-0 w-3.5 h-3.5 bg-utility-danger border-2 border-slate-950 rounded-full animate-pulse"></span>
+    
+    <!-- Hover micro-tooltip B2B -->
+    <span class="absolute right-16 bg-slate-900 border border-slate-800 text-[10px] font-bold text-slate-100 px-2 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+      ¿Agendamos demo en tu local?
+    </span>
+  </button>
+</div>
+
+<script>
+  // DOM Elements
+  const trigger = document.getElementById("scheduler-trigger");
+  const drawer = document.getElementById("scheduler-drawer");
+  const closeBtn = document.getElementById("close-drawer");
+
+  const btnChat = document.getElementById("btn-opt-chat");
+  const btnSchedule = document.getElementById("btn-opt-schedule");
+
+  const contentChat = document.getElementById("content-chat");
+  const contentSchedule = document.getElementById("content-schedule");
+
+  const step1 = document.getElementById("wizard-step-1");
+  const step2 = document.getElementById("wizard-step-2");
+  const step3 = document.getElementById("wizard-step-3");
+
+  const dateGrid = document.getElementById("date-grid");
+  const backToStep1 = document.getElementById("back-to-step1");
+  const backToStep2 = document.getElementById("back-to-step2");
+  const confirmBtn = document.getElementById("btn-confirm-schedule");
+
+  const shopInput = document.getElementById("schedule-shop") as HTMLInputElement;
+  const contactInput = document.getElementById("schedule-contact") as HTMLInputElement;
+
+  let selectedDate = "";
+  let selectedTime = "";
+
+  // Dynamic Date Generator (next 5 working days)
+  function setupCalendar() {
+    if (!dateGrid) return;
+    dateGrid.innerHTML = "";
+    
+    const daysName = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
+    const monthsName = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Set", "Oct", "Nov", "Dic"];
+    
+    let count = 0;
+    let offset = 1;
+    
+    while (count < 6) {
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + offset);
+      
+      // Skip Sundays
+      if (targetDate.getDay() !== 0) {
+        const dayLabel = daysName[targetDate.getDay()];
+        const dayNum = targetDate.getDate();
+        const monthLabel = monthsName[targetDate.getMonth()];
+        const fullStr = `${dayLabel} ${dayNum} ${monthLabel}`;
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.ariaLabel = `Seleccionar fecha ${fullStr}`;
+        btn.className = "date-slot-btn text-[11px] py-2 px-1 text-center rounded border border-slate-800 bg-slate-950 hover:bg-slate-800 transition-all cursor-pointer flex flex-col items-center justify-center";
+        btn.innerHTML = `<span class="text-slate-400 text-[9px]">${dayLabel}</span><span class="text-white font-bold text-xs">${dayNum}</span><span class="text-slate-400 text-[8px]">${monthLabel}</span>`;
+        btn.addEventListener("click", () => selectDate(fullStr, btn));
+        
+        dateGrid.appendChild(btn);
+        count++;
+      }
+      offset++;
+    }
+  }
+
+  function selectDate(dateStr: string, element: HTMLElement) {
+    selectedDate = dateStr;
+    document.querySelectorAll(".date-slot-btn").forEach(el => el.classList.remove("border-brand-secondary", "bg-brand-secondary/10"));
+    element.classList.add("border-brand-secondary", "bg-brand-secondary/10");
+    
+    // Animate to step 2
+    setTimeout(() => {
+      step1?.classList.add("hidden");
+      step2?.classList.remove("hidden");
+    }, 300);
+  }
+
+  // Time Slots selection
+  document.querySelectorAll(".time-slot-btn").forEach(button => {
+    button.addEventListener("click", (e) => {
+      const btn = e.currentTarget as HTMLButtonElement;
+      selectedTime = btn.dataset.time || "";
+      document.querySelectorAll(".time-slot-btn").forEach(el => el.classList.remove("border-brand-secondary", "bg-brand-secondary/10"));
+      btn.classList.add("border-brand-secondary", "bg-brand-secondary/10");
+      
+      // Animate to step 3
+      setTimeout(() => {
+        step2?.classList.add("hidden");
+        step3?.classList.remove("hidden");
+      }, 300);
+    });
+  });
+
+  // Flow Navigation Back Buttons
+  backToStep1?.addEventListener("click", () => {
+    step2?.classList.add("hidden");
+    step1?.classList.remove("hidden");
+  });
+
+  backToStep2?.addEventListener("click", () => {
+    step3?.classList.add("hidden");
+    step2?.classList.remove("hidden");
+  });
+
+  // Drawer Panel Toggling
+  trigger?.addEventListener("click", () => {
+    const isClosed = drawer?.classList.contains("opacity-0");
+    if (isClosed) {
+      drawer?.classList.remove("scale-95", "opacity-0", "pointer-events-none");
+      drawer?.classList.add("scale-100", "opacity-100", "pointer-events-auto");
+      setupCalendar();
+    } else {
+      closeDrawer();
+    }
+  });
+
+  closeBtn?.addEventListener("click", closeDrawer);
+
+  function closeDrawer() {
+    drawer?.classList.remove("scale-100", "opacity-100", "pointer-events-auto");
+    drawer?.classList.add("scale-95", "opacity-0", "pointer-events-none");
+    // Reset steps after delay
+    setTimeout(() => {
+      step2?.classList.add("hidden");
+      step3?.classList.add("hidden");
+      step1?.classList.remove("hidden");
+      selectedDate = "";
+      selectedTime = "";
+      document.querySelectorAll(".date-slot-btn, .time-slot-btn").forEach(el => el.classList.remove("border-brand-secondary", "bg-brand-secondary/10"));
+    }, 400);
+  }
+
+  // Toggle options (Chat vs Schedule)
+  btnChat?.addEventListener("click", () => {
+    btnChat.classList.add("bg-brand-primary", "text-white");
+    btnChat.classList.remove("bg-slate-800", "text-slate-300");
+    btnSchedule?.classList.add("bg-slate-800", "text-slate-300");
+    btnSchedule?.classList.remove("bg-brand-primary", "text-white");
+    contentChat?.classList.remove("hidden");
+    contentSchedule?.classList.add("hidden");
+  });
+
+  btnSchedule?.addEventListener("click", () => {
+    btnSchedule.classList.add("bg-brand-primary", "text-white");
+    btnSchedule.classList.remove("bg-slate-800", "text-slate-300");
+    btnChat?.classList.add("bg-slate-800", "text-slate-300");
+    btnChat?.classList.remove("bg-brand-primary", "text-white");
+    contentSchedule?.classList.remove("hidden");
+    contentChat?.classList.add("hidden");
+    setupCalendar();
+  });
+
+  // Final confirmation to WhatsApp redirection
+  confirmBtn?.addEventListener("click", () => {
+    const shop = shopInput?.value.trim() || "No especificado";
+    const contact = contactInput?.value.trim() || "No especificado";
+
+    if (!selectedDate || !selectedTime) {
+      alert("Por favor completa la fecha y hora de la visita.");
+      return;
+    }
+
+    if (shop === "No especificado" || contact === "No especificado") {
+      alert("Por favor completa los datos de tu local para poder agendar.");
+      return;
+    }
+
+    const text = `Hola Exacta ERP, me gustaría agendar una demo de diagnóstico de 15 minutos en mi local el día ${selectedDate} a las ${selectedTime}. Mi repuestera se llama: ${shop}. Contacto: ${contact}.`;
+    const waUrl = `https://wa.me/51999647337?text=${encodeURIComponent(text)}`;
+    
+    window.open(waUrl, "_blank");
+    closeDrawer();
+  });
+</script>

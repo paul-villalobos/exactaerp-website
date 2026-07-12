@@ -1,0 +1,350 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- YouTube Preconnect Optimizations -->
+    <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+    <link rel="preconnect" href="https://googleads.g.doubleclick.net" />
+    <link rel="preconnect" href="https://static.doubleclick.net" />
+  </head>
+  <body
+    class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans selection:bg-brand-secondary selection:text-white"
+  >
+    <!-- Header: Menú de Navegación "Anti-Fugas" -->
+    <header
+      class="sticky top-0 z-50 w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-md"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+      >
+        <!-- Lado Izquierdo: Logotipo -->
+        <a href="#hero" class="flex flex-col justify-center">
+          <img
+            src="/logo-horizontal.png"
+            alt="Exacta ERP"
+            class="h-8 w-auto object-contain"
+          />
+          <span
+            class="text-[9px] text-slate-400 font-mono tracking-wider -mt-0.5"
+            >by Palestra</span
+          >
+        </a>
+
+        <!-- Centro: Navegación de Anclaje Interno -->
+        <nav class="hidden md:flex items-center gap-x-8">
+          <a
+            href="#dolores"
+            class="text-sm font-medium text-slate-400 hover:text-slate-100 transition-colors"
+          >
+            ¿Qué resolvemos?
+          </a>
+          <a
+            href="#sistema"
+            class="text-sm font-medium text-slate-400 hover:text-slate-100 transition-colors"
+          >
+            El Sistema
+          </a>
+          <a
+            href="#prueba-fuego"
+            class="text-sm font-medium text-slate-400 hover:text-slate-100 transition-colors"
+          >
+            Clientes Líderes
+          </a>
+        </nav>
+
+        <!-- Lado Derecho: El Botón de Conversión -->
+        <div class="flex flex-col items-end">
+          <a
+            href="https://wa.me/51999647337?text=Hola%20Exacta%20ERP,%20deseo%20solicitar%20una%20demo%20de%20diagnóstico%20en%20mi%20local%20de%20repuestos."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center px-4 py-2 text-xs sm:text-sm font-bold text-slate-950 bg-brand-secondary hover:bg-brand-secondary-hover rounded-md shadow-lg shadow-brand-secondary/20 transition-all hover:scale-105 active:scale-95"
+          >
+            <!-- WhatsApp SVG Icon -->
+            <svg class="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.863-9.864.002-2.634-1.02-5.11-2.884-6.978C16.578 1.897 14.1 .874 11.482.874 6.044.874 1.622 5.293 1.62 10.733c-.001 1.739.46 3.43 1.333 4.937L1.922 20.3l4.725-1.146zm11.378-6.196c-.302-.151-1.785-.882-2.057-.981-.273-.099-.471-.148-.669.151-.197.297-.767.966-.94 1.164-.173.199-.347.223-.649.072-.302-.15-1.272-.469-2.423-1.496-.895-.798-1.5-.178-1.785-.328-.287-.15-.03-.233.243-.506.244-.244.347-.396.52-.66.173-.264.086-.495-.043-.649-.129-.152-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.568-.01-.197 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.785-.73 2.037-1.435.252-.706.252-1.312.177-1.435-.077-.122-.273-.196-.576-.347z"
+              ></path>
+            </svg>
+            Solicitar Demo
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <!-- Footer: El Cierre de Seguridad Legal y de Autoridad -->
+    <footer
+      class="bg-slate-900 border-t border-slate-800 text-slate-300 text-sm py-12"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Bloque 1: Respaldo Institucional y Legitimidad -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-2">
+              <!-- Custom Stylized Logo for Palestra -->
+              <span class="text-lg font-bold text-slate-100 tracking-wider"
+                >PALESTRA</span
+              >
+              <span
+                class="text-xs px-2 py-0.5 bg-slate-800 text-slate-300 rounded font-mono"
+                >SISTEMAS</span
+              >
+            </div>
+            <p class="text-xs leading-relaxed text-slate-300">
+              Exacta ERP es una solución de Palestra Sistemas. Más de 200
+              proyectos tecnológicos entregados de forma exitosa y convenios
+              institucionales vigentes con universidades líderes del Perú
+              (UNMSM).
+            </p>
+          </div>
+
+          <!-- Bloque 2: Transparencia Legal y Tributaria -->
+          <div class="space-y-4">
+            <span
+              class="text-slate-100 font-bold text-xs uppercase tracking-wider block"
+              >Legales y SUNAT</span
+            >
+            <div class="flex flex-col gap-2 text-xs">
+              <button
+                onclick="document.getElementById('modal-privacidad').showModal()"
+                class="text-left text-slate-300 hover:text-white transition-colors cursor-pointer"
+              >
+                Políticas de Privacidad
+              </button>
+              <button
+                onclick="document.getElementById('modal-terminos').showModal()"
+                class="text-left text-slate-300 hover:text-white transition-colors cursor-pointer"
+              >
+                Términos del Servicio
+              </button>
+              <button
+                onclick="document.getElementById('modal-reclamaciones').showModal()"
+                class="text-left text-slate-300 hover:text-white transition-colors cursor-pointer"
+              >
+                Libro de Reclamaciones Virtual
+              </button>
+            </div>
+            <div class="pt-2 border-t border-slate-800">
+              <span class="text-[10px] text-slate-300 font-mono block"
+                >RAZÓN SOCIAL: Palestra Sistemas E.I.R.L</span
+              >
+              <span class="text-[10px] text-slate-300 font-mono block"
+                >RUC: 20611038446</span
+              >
+            </div>
+          </div>
+
+          <!-- Bloque 3: Datos de Contacto Directo -->
+          <div class="space-y-4">
+            <span
+              class="text-slate-100 font-bold text-xs uppercase tracking-wider block"
+              >Contacto Directo</span
+            >
+            <div class="space-y-2 text-xs">
+              <p class="flex items-start">
+                <span class="font-semibold text-slate-300 mr-1.5"
+                  >Oficinas:</span
+                >
+                Jr. Coyllur 449, Lima, Perú.
+              </p>
+              <p class="flex items-center">
+                <span class="font-semibold text-slate-300 mr-1.5">Correo:</span>
+                <a
+                  href="mailto:wilver.villalobos@sdkpalestra.com"
+                  class="hover:text-white transition-colors"
+                  >wilver.villalobos@sdkpalestra.com</a
+                >
+              </p>
+              <p class="flex items-center">
+                <span class="font-semibold text-slate-300 mr-1.5">Canal:</span>
+                <span class="text-brand-secondary font-semibold"
+                  >Atención Preferencial B2B</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-8 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-450"
+        >
+          <p>
+            © 2026 Exacta ERP - Palestra Sistemas. Todos los derechos
+            reservados.
+          </p>
+          <p class="font-mono">
+            Exacta ERP • Soluciones de gestión para autopartes.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- LIGHTWEIGHT OVERLAYS / MODALS FOR LEGAL COMPLIANCE -->
+    <dialog
+      id="modal-privacidad"
+      class="backdrop:bg-slate-950/80 bg-slate-900 border border-slate-800 rounded-lg p-6 max-w-2xl w-full text-slate-300 shadow-2xl relative"
+    >
+      <h3 class="text-lg font-bold text-white mb-4">Políticas de Privacidad</h3>
+      <div class="space-y-3 text-xs overflow-y-auto max-h-[60vh] pr-2">
+        <p>
+          <strong>1. Recolección de Datos:</strong> Palestra Sistemas recopila la
+          información suministrada voluntariamente en nuestros formularios de contacto,
+          demostraciones y widgets de agendamiento para gestionar visitas y demostraciones
+          de software.
+        </p>
+        <p>
+          <strong>2. Uso de la Información:</strong> Los datos se emplean única y
+          exclusivamente con fines de contacto comercial para la solución Exacta ERP.
+          Bajo ninguna circunstancia vendemos ni compartimos sus datos personales
+          con terceros.
+        </p>
+        <p>
+          <strong>3. Derechos ARCO:</strong> Como titular de sus datos personales,
+          usted puede solicitar el acceso, rectificación, cancelación u oposición
+          al uso de su información escribiendo a <em
+            >wilver.villalobos@sdkpalestra.com</em
+          >.
+        </p>
+      </div>
+      <div class="mt-6 flex justify-end">
+        <button
+          onclick="document.getElementById('modal-privacidad').close()"
+          class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded text-xs cursor-pointer"
+        >
+          Entendido / Cerrar
+        </button>
+      </div>
+    </dialog>
+
+    <dialog
+      id="modal-terminos"
+      class="backdrop:bg-slate-950/80 bg-slate-900 border border-slate-800 rounded-lg p-6 max-w-2xl w-full text-slate-300 shadow-2xl relative"
+    >
+      <h3 class="text-lg font-bold text-white mb-4">Términos del Servicio</h3>
+      <div class="space-y-3 text-xs overflow-y-auto max-h-[60vh] pr-2">
+        <p>
+          <strong>1. Descripción del Servicio:</strong> Exacta ERP es un software
+          integral de administración comercial y contabilidad desarrollado por Palestra
+          Sistemas E.I.R.L, enfocado en el sector de distribuidoras de repuestos y
+          autopartes en Perú.
+        </p>
+        <p>
+          <strong>2. Licenciamiento y Uso:</strong> El acceso a Exacta ERP se realiza
+          bajo el modelo SaaS (Software como Servicio). Las cuentas y accesos quedan
+          limitados a las sucursales y licencias acordadas contractualmente.
+        </p>
+        <p>
+          <strong>3. Integración SUNAT:</strong> El sistema provee conexión con Proveedores
+          de Servicios Electrónicos autorizados. El cliente es responsable final por
+          la veracidad de la información tributaria enviada a la SUNAT.
+        </p>
+      </div>
+      <div class="mt-6 flex justify-end">
+        <button
+          onclick="document.getElementById('modal-terminos').close()"
+          class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded text-xs cursor-pointer"
+        >
+          Entendido / Cerrar
+        </button>
+      </div>
+    </dialog>
+
+    <dialog
+      id="modal-reclamaciones"
+      class="backdrop:bg-slate-950/80 bg-slate-900 border border-slate-800 rounded-lg p-6 max-w-2xl w-full text-slate-300 shadow-2xl relative"
+    >
+      <h3 class="text-lg font-bold text-white mb-4">
+        Libro de Reclamaciones Virtual
+      </h3>
+      <form
+        class="space-y-3 text-xs"
+        onsubmit="event.preventDefault(); alert('Reclamo registrado de forma simulada. Nos contactaremos a la brevedad.'); document.getElementById('modal-reclamaciones').close();"
+      >
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-slate-400 mb-1">Nombre Completo</label>
+            <input
+              type="text"
+              required
+              class="w-full bg-slate-950 border border-slate-800 rounded p-2 focus:border-brand-secondary outline-none text-slate-100"
+            />
+          </div>
+          <div>
+            <label class="block text-slate-400 mb-1">RUC o DNI</label>
+            <input
+              type="text"
+              required
+              class="w-full bg-slate-950 border border-slate-800 rounded p-2 focus:border-brand-secondary outline-none text-slate-100"
+            />
+          </div>
+        </div>
+        <div>
+          <label class="block text-slate-400 mb-1">Correo Electrónico</label>
+          <input
+            type="email"
+            required
+            class="w-full bg-slate-950 border border-slate-800 rounded p-2 focus:border-brand-secondary outline-none text-slate-100"
+          />
+        </div>
+        <div>
+          <label class="block text-slate-400 mb-1">Tipo de Reclamación</label>
+          <select
+            class="w-full bg-slate-950 border border-slate-800 rounded p-2 focus:border-brand-secondary outline-none text-slate-100"
+          >
+            <option
+              >Queja (Descontento no relacionado directamente a los productos)</option
+            >
+            <option>Reclamo (Inconformidad con el servicio adquirido)</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-slate-400 mb-1"
+            >Detalle del reclamo o queja</label
+          >
+          <textarea
+            required
+            rows="4"
+            class="w-full bg-slate-950 border border-slate-800 rounded p-2 focus:border-brand-secondary outline-none text-slate-100 resize-none"
+          ></textarea>
+        </div>
+        <div class="mt-4 flex justify-between gap-3">
+          <button
+            type="button"
+            onclick="document.getElementById('modal-reclamaciones').close()"
+            class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded cursor-pointer"
+          >
+            Cancelar
+          </button>
+          <button
+            type="submit"
+            class="px-4 py-2 bg-brand-secondary hover:bg-brand-secondary-hover text-white font-bold rounded cursor-pointer"
+          >
+            Enviar Reclamación
+          </button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>
