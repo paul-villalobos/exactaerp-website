@@ -1,5 +1,8 @@
 ---
 import "../styles/global.css";
+import { Image } from "astro:assets";
+import logoHorizontal from "../assets/logo-horizontal.png";
+import logoPalestra from "../assets/LOGO-PALESTRA.png";
 
 interface Props {
   title: string;
@@ -36,9 +39,10 @@ const { title, description } = Astro.props;
       >
         <!-- Lado Izquierdo: Logotipo -->
         <a href="#hero" class="flex items-center">
-          <img
-            src="/logo-horizontal.png"
+          <Image
+            src={logoHorizontal}
             alt="ERP EXACTA"
+            height={44}
             class="h-11 w-auto object-contain"
           />
         </a>
@@ -98,9 +102,10 @@ const { title, description } = Astro.props;
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           <!-- Bloque 1: Respaldo Institucional y Legitimidad -->
           <div class="space-y-4">
-            <img
-              src="/LOGO-PALESTRA.png"
+            <Image
+              src={logoPalestra}
               alt="Palestra Sistemas"
+              height={32}
               class="h-8 w-auto object-contain"
             />
             <p class="text-xs leading-relaxed text-slate-300">
