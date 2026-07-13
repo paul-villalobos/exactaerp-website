@@ -2420,11 +2420,15 @@ import ContactWidget from "../components/ContactWidget.astro";
 
   // FAST-SALE WIDGET SIMULATION LOOP
   function runFastSaleSimulation() {
-    const textSpan = document.querySelector(".mock-typing-text");
-    const resultCard = document.querySelector(".mock-result-card");
-    const successCard = document.querySelector(".mock-success-card");
+    const textSpanEl = document.querySelector(".mock-typing-text");
+    const resultCardEl = document.querySelector(".mock-result-card");
+    const successCardEl = document.querySelector(".mock-success-card");
 
-    if (!textSpan || !resultCard || !successCard) return;
+    if (!textSpanEl || !resultCardEl || !successCardEl) return;
+
+    const textSpan = textSpanEl;
+    const resultCard = resultCardEl;
+    const successCard = successCardEl;
 
     const fullText = "Toyota Hilux 2022";
     let index = 0;
