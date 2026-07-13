@@ -7,9 +7,19 @@ import logoPalestra from "../assets/LOGO-PALESTRA.png";
 interface Props {
   title: string;
   description: string;
+  ogImage?: string;
+  robots?: string;
 }
 
-const { title, description } = Astro.props;
+const { 
+  title, 
+  description, 
+  ogImage = "/logo-vertical.png", 
+  robots = "index, follow" 
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL(ogImage, Astro.site);
 ---
 
 <!doctype html>
@@ -21,6 +31,73 @@ const { title, description } = Astro.props;
     <meta name="description" content={description} />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="robots" content={robots} />
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:locale" content="es_PE" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={socialImageURL} />
+
+    <!-- Structured Data: JSON-LD -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify([
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Palestra Sistemas E.I.R.L.",
+        "image": "https://erpexacta.com/logo-vertical.png",
+        "@id": "https://erpexacta.com/#localbusiness",
+        "url": "https://erpexacta.com",
+        "telephone": "+51999647337",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle Coyllur 449 SJL",
+          "addressLocality": "Lima",
+          "addressRegion": "Lima",
+          "postalCode": "15401",
+          "addressCountry": "PE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -12.022497235039218,
+          "longitude": -76.98130657355956
+        },
+        "hasMap": "https://maps.app.goo.gl/VSpkfA9gZEttBw3e6",
+        "sameAs": [
+          "https://www.facebook.com/PalestraLabs/",
+          "https://www.linkedin.com/company/palestra/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Exacta ERP",
+        "operatingSystem": "All",
+        "applicationCategory": "BusinessApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "PEN"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "42"
+        }
+      }
+    ])} />
 
     <!-- YouTube Preconnect Optimizations -->
     <link rel="preconnect" href="https://www.youtube-nocookie.com" />
