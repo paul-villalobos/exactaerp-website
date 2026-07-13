@@ -35,16 +35,12 @@ const { title, description } = Astro.props;
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
       >
         <!-- Lado Izquierdo: Logotipo -->
-        <a href="#hero" class="flex flex-col justify-center">
+        <a href="#hero" class="flex items-center">
           <img
             src="/logo-horizontal.png"
-            alt="Exacta ERP"
-            class="h-8 w-auto object-contain"
+            alt="ERP EXACTA"
+            class="h-11 w-auto object-contain"
           />
-          <span
-            class="text-[9px] text-slate-400 font-mono tracking-wider -mt-0.5"
-            >by Palestra</span
-          >
         </a>
 
         <!-- Centro: Navegación de Anclaje Interno -->
@@ -99,61 +95,20 @@ const { title, description } = Astro.props;
       class="bg-slate-900 border-t border-slate-800 text-slate-300 text-sm py-12"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           <!-- Bloque 1: Respaldo Institucional y Legitimidad -->
           <div class="space-y-4">
-            <div class="flex items-center gap-2">
-              <!-- Custom Stylized Logo for Palestra -->
-              <span class="text-lg font-bold text-slate-100 tracking-wider"
-                >PALESTRA</span
-              >
-              <span
-                class="text-xs px-2 py-0.5 bg-slate-800 text-slate-300 rounded font-mono"
-                >SISTEMAS</span
-              >
-            </div>
+            <img
+              src="/LOGO-PALESTRA.png"
+              alt="Palestra Sistemas"
+              class="h-8 w-auto object-contain"
+            />
             <p class="text-xs leading-relaxed text-slate-300">
-              Exacta ERP es una solución de Palestra Sistemas. Más de 200
+              ERP EXACTA es una solución de Palestra Sistemas. Más de 200
               proyectos tecnológicos entregados de forma exitosa y convenios
               institucionales vigentes con universidades líderes del Perú
-              (UNMSM).
+              (UNMSM, Creatika Labs, Inverbotics Group).
             </p>
-          </div>
-
-          <!-- Bloque 2: Transparencia Legal y Tributaria -->
-          <div class="space-y-4">
-            <span
-              class="text-slate-100 font-bold text-xs uppercase tracking-wider block"
-              >Legales y SUNAT</span
-            >
-            <div class="flex flex-col gap-2 text-xs">
-              <button
-                onclick="document.getElementById('modal-privacidad').showModal()"
-                class="text-left text-slate-300 hover:text-white transition-colors cursor-pointer"
-              >
-                Políticas de Privacidad
-              </button>
-              <button
-                onclick="document.getElementById('modal-terminos').showModal()"
-                class="text-left text-slate-300 hover:text-white transition-colors cursor-pointer"
-              >
-                Términos del Servicio
-              </button>
-              <button
-                onclick="document.getElementById('modal-reclamaciones').showModal()"
-                class="text-left text-slate-300 hover:text-white transition-colors cursor-pointer"
-              >
-                Libro de Reclamaciones Virtual
-              </button>
-            </div>
-            <div class="pt-2 border-t border-slate-800">
-              <span class="text-[10px] text-slate-300 font-mono block"
-                >RAZÓN SOCIAL: Palestra Sistemas E.I.R.L</span
-              >
-              <span class="text-[10px] text-slate-300 font-mono block"
-                >RUC: 20611038446</span
-              >
-            </div>
           </div>
 
           <!-- Bloque 3: Datos de Contacto Directo -->
@@ -167,7 +122,7 @@ const { title, description } = Astro.props;
                 <span class="font-semibold text-slate-300 mr-1.5"
                   >Oficinas:</span
                 >
-                Jr. Coyllur 449, Lima, Perú.
+                Calle Coyllur 449 SJL, Lima, Perú.
               </p>
               <p class="flex items-center">
                 <span class="font-semibold text-slate-300 mr-1.5">Correo:</span>
@@ -175,6 +130,14 @@ const { title, description } = Astro.props;
                   href="mailto:wilver.villalobos@sdkpalestra.com"
                   class="hover:text-white transition-colors"
                   >wilver.villalobos@sdkpalestra.com</a
+                >
+              </p>
+              <p class="flex items-center">
+                <span class="font-semibold text-slate-300 mr-1.5">Teléfono:</span>
+                <a
+                  href="tel:+51999647337"
+                  class="hover:text-white transition-colors"
+                  >+51 999 647 337</a
                 >
               </p>
               <p class="flex items-center">
@@ -191,11 +154,11 @@ const { title, description } = Astro.props;
           class="mt-8 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-450"
         >
           <p>
-            © 2026 Exacta ERP - Palestra Sistemas. Todos los derechos
+            © 2026 ERP EXACTA - Palestra Sistemas. Todos los derechos
             reservados.
           </p>
           <p class="font-mono">
-            Exacta ERP • Soluciones de gestión para autopartes.
+            ERP EXACTA • Soluciones de gestión para autopartes.
           </p>
         </div>
       </div>
@@ -216,7 +179,7 @@ const { title, description } = Astro.props;
         </p>
         <p>
           <strong>2. Uso de la Información:</strong> Los datos se emplean única y
-          exclusivamente con fines de contacto comercial para la solución Exacta ERP.
+          exclusivamente con fines de contacto comercial para la solución ERP EXACTA.
           Bajo ninguna circunstancia vendemos ni compartimos sus datos personales
           con terceros.
         </p>
@@ -245,13 +208,13 @@ const { title, description } = Astro.props;
       <h3 class="text-lg font-bold text-white mb-4">Términos del Servicio</h3>
       <div class="space-y-3 text-xs overflow-y-auto max-h-[60vh] pr-2">
         <p>
-          <strong>1. Descripción del Servicio:</strong> Exacta ERP es un software
+          <strong>1. Descripción del Servicio:</strong> ERP EXACTA es un software
           integral de administración comercial y contabilidad desarrollado por Palestra
           Sistemas E.I.R.L, enfocado en el sector de distribuidoras de repuestos y
           autopartes en Perú.
         </p>
         <p>
-          <strong>2. Licenciamiento y Uso:</strong> El acceso a Exacta ERP se realiza
+          <strong>2. Licenciamiento y Uso:</strong> El acceso a ERP EXACTA se realiza
           bajo el modelo SaaS (Software como Servicio). Las cuentas y accesos quedan
           limitados a las sucursales y licencias acordadas contractualmente.
         </p>
