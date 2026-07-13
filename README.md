@@ -41,3 +41,13 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+
+
+## Deploy to Cloudflare
+
+Preview your project locally with Wrangler.
+npx astro build && npx wrangler dev
+
+Deploy using npx wrangler deploy
+npx astro build && npx wrangler deploy
