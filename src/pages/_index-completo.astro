@@ -1,6 +1,8 @@
 ---
 import LandingLayout from "../layouts/LandingLayout.astro";
 import ContactWidget from "../components/ContactWidget.astro";
+import { Image } from "astro:assets";
+import logoHorizontal from "../assets/logo-horizontal.png";
 ---
 
 <LandingLayout
@@ -8,6 +10,70 @@ import ContactWidget from "../components/ContactWidget.astro";
   description="ERP comercial peruano para importadores, distribuidoras y servicios. Blinda tus márgenes y gestiona tu kárdex SUNAT en tiempo real sin cierres de mes."
   ogImage="/logo-vertical.png"
 >
+  <!-- Header: Menú de Navegación "Anti-Fugas" -->
+  <header
+    class="sticky top-0 z-50 w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-md"
+  >
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+    >
+      <!-- Lado Izquierdo: Logotipo -->
+      <a href="#hero" class="flex items-center">
+        <Image
+          src={logoHorizontal}
+          alt="ERP EXACTA"
+          height={44}
+          class="h-11 w-auto object-contain"
+        />
+      </a>
+
+      <!-- Centro: Navegación de Anclaje Interno -->
+      <nav class="hidden md:flex items-center gap-x-8">
+        <a
+          href="#enrutador-compuertas"
+          class="text-sm font-medium text-slate-400 hover:text-slate-100 transition-colors"
+        >
+          Sistemas
+        </a>
+        <a
+          href="#filtro-escala"
+          class="text-sm font-medium text-slate-400 hover:text-slate-100 transition-colors"
+        >
+          Filtro Escala
+        </a>
+        <a
+          href="#musculo-transaccional"
+          class="text-sm font-medium text-slate-400 hover:text-slate-100 transition-colors"
+        >
+          Respaldo
+        </a>
+        <a
+          href="#diagnostico-ia"
+          class="text-sm font-medium text-slate-400 hover:text-slate-100 transition-colors"
+        >
+          Diagnóstico IA
+        </a>
+      </nav>
+
+      <!-- Lado Derecho: El Botón de Conversión -->
+      <div class="flex flex-col items-end">
+        <a
+          href="https://wa.me/51999647337?text=Hola%20Exacta%20ERP,%20deseo%20solicitar%20una%20demo%20de%20diagnóstico%20en%20mi%20local%20de%20repuestos."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center px-4 py-2 text-xs sm:text-sm font-bold text-slate-950 bg-brand-secondary hover:bg-brand-secondary-hover rounded-md shadow-lg shadow-brand-secondary/20 transition-all hover:scale-105 active:scale-95"
+        >
+          <!-- WhatsApp SVG Icon -->
+          <svg class="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.863-9.864.002-2.634-1.02-5.11-2.884-6.978C16.578 1.897 14.1 .874 11.482.874 6.044.874 1.622 5.293 1.62 10.733c-.001 1.739.46 3.43 1.333 4.937L1.922 20.3l4.725-1.146zm11.378-6.196c-.302-.151-1.785-.882-2.057-.981-.273-.099-.471-.148-.669.151-.197.297-.767.966-.94 1.164-.173.199-.347.223-.649.072-.302-.15-1.272-.469-2.423-1.496-.895-.798-1.5-.178-1.785-.328-.287-.15-.03-.233.243-.506.244-.244.347-.396.52-.66.173-.264.086-.495-.043-.649-.129-.152-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.568-.01-.197 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.785-.73 2.037-1.435.252-.706.252-1.312.177-1.435-.077-.122-.273-.196-.576-.347z"
+            ></path>
+          </svg>
+          Solicitar Demo
+        </a>
+      </div>
+    </div>
+  </header>
   <!-- SECCIÓN 1: HERO SECTION -->
   <section
     id="hero"

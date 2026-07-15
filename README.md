@@ -47,7 +47,7 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 ## Deploy to Cloudflare
 
 Preview your project locally with Wrangler.
-npx astro build && npx wrangler dev
+pnpm astro build && pnpm wrangler dev
 
-Deploy using npx wrangler deploy
-npx astro build && npx wrangler deploy
+Deploy using pnpm wrangler deploy
+pnpm astro build && pnpm wrangler deploy
