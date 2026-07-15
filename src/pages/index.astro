@@ -1,0 +1,1290 @@
+---
+import LandingLayout from "../layouts/LandingLayout.astro";
+import ContactWidget from "../components/ContactWidget.astro";
+---
+
+<LandingLayout
+  title="ERP Exacta | Sistema de Control Comercial y Márgenes en Vivo"
+  description="ERP comercial peruano para importadores, distribuidoras y servicios. Blinda tus márgenes y gestiona tu kárdex SUNAT en tiempo real sin cierres de mes."
+  ogImage="/logo-vertical.png"
+>
+  <!-- SECCIÓN 1: HERO SECTION -->
+  <section
+    id="hero"
+    class="relative overflow-hidden pt-12 pb-16 md:py-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 border-b border-slate-900"
+  >
+    <!-- Background glow accents -->
+    <div
+      class="absolute top-0 left-1/3 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[100px] -z-10"
+    >
+    </div>
+    <div
+      class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-brand-secondary/5 rounded-full blur-[80px] -z-10"
+    >
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Currency switcher discretely floating at top-right of Hero content -->
+      <div class="flex items-center justify-end gap-2 mb-6">
+        <span
+          class="text-[10px] uppercase font-bold tracking-wider font-mono text-slate-450"
+          >Multi-Moneda:</span
+        >
+        <div
+          class="bg-slate-900 border border-slate-800 p-0.5 rounded-lg inline-flex relative"
+        >
+          <button
+            id="currency-switch-soles"
+            class="px-3 py-1 rounded-md text-[10px] sm:text-xs font-bold font-mono transition-all bg-brand-secondary text-slate-950 cursor-pointer"
+            data-currency="PEN"
+          >
+            Soles (S/.)
+          </button>
+          <button
+            id="currency-switch-dolares"
+            class="px-3 py-1 rounded-md text-[10px] sm:text-xs font-bold font-mono transition-all text-slate-450 hover:text-slate-200 cursor-pointer"
+            data-currency="USD"
+          >
+            Dólares ($)
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center"
+      >
+        <!-- Left Column: Copy -->
+        <div class="lg:col-span-7 space-y-6 text-left">
+          <!-- Market Context Cintillo -->
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-secondary/30 bg-brand-secondary/10"
+          >
+            <span class="w-2 h-2 rounded-full bg-brand-secondary animate-pulse"
+            ></span>
+            <span
+              class="text-xs font-bold text-orange-350 tracking-wide uppercase font-mono"
+            >
+              SISTEMA DE CONTROL OPERATIVO Y MÁRGENES DE GANANCIA EN VIVO
+            </span>
+          </div>
+
+          <!-- Main Title H1 -->
+          <h1
+            class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight"
+          >
+            El ERP comercial que toma el control donde los sistemas
+            tradicionales se rompen.
+          </h1>
+
+          <!-- Support Subtitle H2 -->
+          <h2
+            class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl"
+            data-astro-cid-lcdefpme
+          >
+            Sincroniza tus almacenes, protege tus márgenes por pedido en vivo y
+            automatiza tu Inventario Permanente Valorizado bajo los estándares
+            de la SUNAT.
+            <span
+              class="block mt-2 text-brand-secondary font-semibold font-mono text-xs sm:text-sm"
+              >⚡ Control en tiempo real • Sin detener tu mostrador • Sin
+              cierres de mes.</span
+            >
+          </h2>
+
+          <!-- Call to Action -->
+          <div class="space-y-3 pt-2">
+            <div
+              class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
+            >
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Simulated Management Dashboard (HTML/CSS UI) -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div
+            class="w-full max-w-md bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-2xl relative"
+          >
+            <!-- Simulated application top bar -->
+            <div
+              class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex items-center justify-between"
+            >
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
+              </div>
+              <span
+                class="text-[10px] font-mono text-slate-450 font-bold uppercase tracking-wider"
+              >
+                ERP Exacta — PANEL GERENCIAL
+              </span>
+              <span
+                class="text-[9px] bg-emerald-950 border border-emerald-800 text-emerald-400 px-2 py-0.5 rounded font-mono font-bold animate-pulse"
+              >
+                EN VIVO
+              </span>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div
+              class="p-4 sm:p-5 space-y-4 bg-slate-950/70 text-slate-100 font-sans"
+            >
+              <!-- Grid KPIs -->
+              <div class="grid grid-cols-2 gap-3">
+                <!-- Utilidad Bruta Proyectada del Día -->
+                <div
+                  class="bg-slate-900 border border-slate-800 p-3.5 rounded-lg relative overflow-hidden group hover:border-slate-700/80 transition-all col-span-2"
+                >
+                  <span
+                    class="text-[9px] text-slate-400 font-bold uppercase block tracking-wider"
+                    >Utilidad Bruta Proyectada del Día</span
+                  >
+                  <div
+                    class="text-2xl sm:text-3xl font-black text-white font-mono mt-1 currency-value"
+                    id="kpi-utilidad-bruta"
+                    data-pen="S/. 12,450"
+                    data-usd="$3,365"
+                  >
+                    S/. 12,450
+                  </div>
+                  <span
+                    class="text-[10px] font-mono font-semibold text-emerald-400 flex items-center gap-1 mt-1"
+                  >
+                    ▲ +14.2% <span class="text-[8px] text-slate-500 font-normal"
+                      >vs ayer</span
+                    >
+                  </span>
+                  <div
+                    class="absolute bottom-0 right-0 left-0 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-400"
+                  >
+                  </div>
+                </div>
+
+                <!-- Estado de Pedidos en Mostrador -->
+                <div
+                  class="bg-slate-900 border border-slate-800 p-3.5 rounded-lg relative overflow-hidden group hover:border-slate-700/80 transition-all col-span-2"
+                >
+                  <span
+                    class="text-[9px] text-slate-400 font-bold uppercase block tracking-wider"
+                    >Estado de Pedidos en Mostrador</span
+                  >
+                  <div
+                    class="text-xl sm:text-2xl font-black text-white font-mono mt-1"
+                    id="kpi-transito-pedidos"
+                  >
+                    48 Pedidos
+                  </div>
+                  <span
+                    class="text-[10px] font-mono font-semibold text-sky-400 flex items-center gap-1 mt-1"
+                  >
+                    ● Almacén de Tránsito en vivo <span
+                      class="text-[8px] text-slate-500 font-normal"
+                      >sin trabas</span
+                    >
+                  </span>
+                  <div
+                    class="absolute bottom-0 right-0 left-0 h-0.5 bg-gradient-to-r from-sky-500 to-indigo-400"
+                  >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Alertas de Margen Protegido (Audit/Leak control) -->
+              <div class="space-y-1.5">
+                <span
+                  class="text-[9px] text-slate-450 font-bold uppercase tracking-wider block font-mono"
+                  >Control de Fugas de Margen</span
+                >
+                <div
+                  class="bg-red-950/30 border border-red-500/30 rounded p-3 text-red-300 text-[10px] sm:text-[11px] font-mono flex items-start gap-2 shadow-lg"
+                >
+                  <span class="text-red-500 animate-pulse text-xs">⛔</span>
+                  <div>
+                    <strong class="font-bold text-red-400 block text-[10px]"
+                      >ALERTA DE DESVIACIÓN DE MARGEN:</strong
+                    >
+                    Vendedor <span class="text-white font-semibold"
+                      >"Tienda 1"</span
+                    > intentó vender por debajo del margen mínimo: <span
+                      class="text-red-400 font-bold uppercase">BLOQUEADO</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dashboard Footer -->
+            <div
+              class="p-3 bg-slate-900 border-t border-slate-800 text-[10px] text-slate-400 flex items-center justify-between"
+            >
+              <span>Auditoría de márgenes activa</span>
+              <span class="font-mono text-[9px] text-slate-500"
+                >Módulos: Inventario / Importación / SUNAT</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: CONSOLIDACIÓN DE AUTORIDAD Y PRUEBA DE FUEGO TRANSACCIONAL -->
+  <section
+    id="musculo-transaccional"
+    class="py-24 bg-slate-950 border-b border-slate-900 relative"
+  >
+    <!-- Visual background grid/accents -->
+    <div
+      class="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20 pointer-events-none"
+    >
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span
+          class="text-xs font-bold text-brand-secondary uppercase tracking-wider font-mono px-2.5 py-0.5 rounded border border-brand-secondary/20 bg-orange-950/20"
+        >
+          RESPALDO TECNOLÓGICO Y SOLIDEZ EMPRESARIAL
+        </span>
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight pt-2"
+        >
+          La tranquilidad de operar con la infraestructura que sostiene a los
+          líderes de la industria en el Perú.
+        </h2>
+        <p
+          class="text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed font-sans max-w-2xl mx-auto"
+        >
+          ERP Exacta no es un software improvisado. Cuenta con el respaldo de
+          ingeniería de <strong>Palestra Sistemas</strong>, organización con
+          certificación global DUNS y más de 30 años desarrollando e
+          implementando soluciones críticas para medianas y grandes empresas en
+          América Latina. Nuestra tecnología soporta y audita operaciones de
+          alta transaccionalidad sin caídas del sistema.
+        </p>
+      </div>
+
+      <!-- 3 Columns of Impact (Prueba de Fuego) -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-5xl mx-auto mb-20"
+      >
+        <!-- Stat 1: +30 Años -->
+        <div
+          class="bg-slate-900/40 border border-slate-850/80 p-8 rounded-2xl relative overflow-hidden group hover:border-brand-secondary/30 transition-colors"
+        >
+          <div
+            class="text-3xl sm:text-4xl font-black text-brand-secondary font-mono tracking-tight"
+          >
+            +30 Años
+          </div>
+          <p
+            class="text-xs sm:text-sm text-slate-200 font-bold uppercase tracking-wider mt-3"
+          >
+            Ingeniería de Gestión
+          </p>
+          <p class="text-[11px] sm:text-xs text-slate-400 mt-2 leading-relaxed">
+            De experiencia en diseño, desarrollo y estabilización de sistemas de
+            gestión comercial en el Perú y Latinoamérica.
+          </p>
+        </div>
+
+        <!-- Stat 2: +3 Millones / Counter -->
+        <div
+          class="bg-slate-900/40 border border-slate-850/80 p-8 rounded-2xl relative overflow-hidden group hover:border-brand-primary/30 transition-colors"
+        >
+          <div class="flex items-center justify-center gap-1.5">
+            <span
+              class="text-3xl sm:text-4xl font-black text-white font-mono tracking-tight"
+            >
+              +<span id="live-transaction-counter"
+                >3.4<span
+                  class="text-base sm:text-lg font-medium text-slate-400 font-sans ml-1"
+                  >Millones</span
+                ></span
+              >
+            </span>
+            <span class="relative flex h-2 w-2">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"
+              ></span>
+            </span>
+          </div>
+          <p
+            class="text-xs sm:text-sm text-slate-200 font-bold uppercase tracking-wider mt-3"
+          >
+            Registros Procesados
+          </p>
+          <p class="text-[11px] sm:text-xs text-slate-400 mt-2 leading-relaxed">
+            De transacciones y registros mensuales procesados y auditados de
+            forma segura por nuestros motores sin pérdida de información.
+          </p>
+        </div>
+
+        <!-- Stat 3: Certificado DUNS -->
+        <div
+          class="bg-slate-900/40 border border-slate-850/80 p-8 rounded-2xl relative overflow-hidden group hover:border-brand-secondary/30 transition-colors"
+        >
+          <div
+            class="text-3xl sm:text-4xl font-black text-emerald-400 font-mono tracking-tight"
+          >
+            DUNS 934-469-336
+          </div>
+          <p
+            class="text-xs sm:text-sm text-slate-200 font-bold uppercase tracking-wider mt-3"
+          >
+            Certificación Global
+          </p>
+          <p class="text-[11px] sm:text-xs text-slate-400 mt-2 leading-relaxed">
+            Registro internacional que nos valida como proveedor tecnológico
+            seguro y financieramente confiable a nivel global.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: EL CIERRE IRRESISTIBLE -->
+  <section
+    id="cierre-irresistible"
+    class="py-20 border-t border-slate-900 bg-slate-950/60 relative overflow-hidden"
+  >
+    <!-- Glow effects -->
+    <div
+      class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-3xl pointer-events-none"
+    >
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span
+          class="px-3 py-1 text-[10px] font-mono font-black tracking-[0.2em] bg-slate-900 border border-slate-800 text-brand-secondary rounded uppercase"
+        >
+          CERO RIESGO OPERATIVO Y COMPROMISO DE ADOPCIÓN
+        </span>
+        <h2
+          class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mt-6 leading-tight"
+        >
+          Estabilizamos tu mostrador y blindamos tu kárdex tributario, sin
+          sobrecostos por demoras.
+        </h2>
+        <p
+          class="text-xs sm:text-sm text-slate-400 mt-4 leading-relaxed font-sans text-center"
+        >
+          Entendemos perfectamente tu desconfianza. En el Perú, muchas
+          implementaciones de ERP se vuelven eternas, llenas de sobrecostos
+          sorpresa y resistencia de tu personal. ERP Exacta elimina el peligro
+          con una doble garantía de ingeniería comercial, respaldada por la
+          solidez de Palestra Sistemas.
+        </p>
+      </div>
+
+      <!-- Main Two-Column Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Column: Sello de Garantía -->
+        <div
+          class="lg:col-span-4 flex flex-col items-center justify-center text-center"
+        >
+          <div class="relative w-52 h-52 flex items-center justify-center">
+            <!-- Glowing back effect -->
+            <div
+              class="absolute inset-0 bg-brand-secondary/15 rounded-full blur-2xl animate-pulse"
+            >
+            </div>
+            <!-- Gold circular rotating ring -->
+            <svg
+              class="w-full h-full animate-[spin_25s_linear_infinite]"
+              viewBox="0 0 200 200"
+            >
+              <path
+                id="badgePath"
+                d="M 100, 100 m -70, 0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0"
+                fill="none"></path>
+              <text
+                class="fill-slate-400 font-mono text-[9px] uppercase tracking-[0.14em] font-black"
+              >
+                <textPath href="#badgePath" startOffset="0%">
+                  • 30-Day Time-To-Value Guaranteed • Palestra Sistemas
+                </textPath>
+              </text>
+            </svg>
+            <!-- Center Lacre/Seal -->
+            <div
+              class="absolute inset-6 rounded-full bg-slate-950 border border-brand-secondary/40 flex flex-col items-center justify-center p-4 text-center shadow-2xl"
+            >
+              <span
+                class="text-amber-400 text-3xl mb-1 filter drop-shadow-[0_2px_8px_rgba(245,158,11,0.3)]"
+                >🛡️</span
+              >
+              <span
+                class="text-[8px] font-bold text-slate-400 uppercase tracking-widest leading-none text-center"
+                >Garantía de</span
+              >
+              <span
+                class="text-xs font-black text-white uppercase tracking-wider mt-0.5 text-center"
+                >Palestra Sistemas</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Apilamiento de Garantías -->
+        <div class="lg:col-span-8 space-y-6">
+          <!-- Garantía 1 -->
+          <div
+            class="bg-slate-950/60 border border-slate-900 hover:border-slate-800 rounded-xl p-6 transition-all duration-300 relative group"
+          >
+            <div
+              class="absolute -top-3 left-6 px-3 py-0.5 bg-brand-primary/20 border border-brand-primary/30 rounded text-[9px] font-mono font-bold text-brand-primary uppercase tracking-wider"
+            >
+              Puesta en marcha garantizada
+            </div>
+            <div class="flex items-start gap-4">
+              <div
+                class="w-8 h-8 rounded-lg bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-sm shrink-0"
+              >
+                🤝
+              </div>
+              <div class="space-y-2 text-left">
+                <h3
+                  class="text-sm font-bold text-white group-hover:text-brand-secondary transition-colors"
+                >
+                  Garantía 1: Adopción e Implementación en 30 Días
+                </h3>
+                <p class="text-xs text-slate-400 leading-relaxed font-sans">
+                  "Garantizamos que tu sistema ERP Exacta estará técnicamente
+                  listo y tu personal de ventas estará 100% capacitado para
+                  operar a la velocidad de la calle."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Garantía 2 -->
+          <div
+            class="bg-slate-950/60 border border-slate-900 hover:border-slate-800 rounded-xl p-6 transition-all duration-300 relative group"
+          >
+            <div
+              class="absolute -top-3 left-6 px-3 py-0.5 bg-emerald-500/10 border border-emerald-500/20 rounded text-[9px] font-mono font-bold text-emerald-400 uppercase tracking-wider"
+            >
+              La continuidad de tu mostrador es sagrada
+            </div>
+            <div class="flex items-start gap-4">
+              <div
+                class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-sm shrink-0"
+              >
+                🛠️
+              </div>
+              <div class="space-y-2 text-left">
+                <h3
+                  class="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors"
+                >
+                  Garantía 2: Consistencia Técnica y Estabilidad 24/7
+                </h3>
+                <p class="text-xs text-slate-400 leading-relaxed font-sans">
+                  "Garantizamos que la arquitectura de ERP Exacta genera y
+                  exporta de forma consistente tus Libros Electrónicos e
+                  Inventario Permanente Valorizado de acuerdo con los estándares
+                  y estructuras técnicas vigentes de la SUNAT."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Definitivo -->
+      <div class="text-center mt-16 max-w-xl mx-auto space-y-4">
+        <button
+          id="btn-schedule-feasibility"
+          class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-brand-secondary hover:bg-brand-secondary-hover text-slate-950 text-xs font-bold uppercase tracking-wider rounded transition-all cursor-pointer shadow-xl shadow-brand-secondary/20"
+        >
+          🗓️ Agendar Reunión de Viabilidad (15 Minutos)
+        </button>
+        <p class="text-[10px] text-slate-400 font-sans text-center">
+          Sin compromisos. Evaluaremos si tu distribuidora califica para la
+          implementación express de 30 días en base a tus sucursales y volumen
+          de SKUs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Conversion Bottom Bar (Reused script controls) -->
+  <div
+    id="sticky-bar"
+    class="fixed bottom-0 inset-x-0 bg-slate-900/90 backdrop-blur-md border-t border-slate-800 z-40 transform translate-y-24 transition-transform duration-300"
+  >
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between"
+    >
+      <div class="hidden sm:flex flex-col text-left">
+        <span class="text-xs font-bold text-white tracking-wide"
+          >¿Listo para el control comercial total?</span
+        >
+        <span class="text-[10px] text-slate-400 font-mono"
+          >Implementación de Kárdex SUNAT y Márgenes en 30 días.</span
+        >
+      </div>
+      <div class="flex items-center gap-3 w-full sm:w-auto">
+        <a
+          href="#diagnostico-ia"
+          class="flex-1 sm:flex-initial text-center px-5 py-2.5 bg-slate-950 border border-slate-800 hover:border-slate-700 text-slate-200 text-xs font-bold rounded cursor-pointer"
+        >
+          Iniciar Diagnóstico
+        </a>
+        <a
+          href="https://wa.me/51999647337?text=Hola%20Exacta%20ERP,%20deseo%20coordinar%2520una%20demostración%2520comercial%2520de%2520diagnóstico."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-1 sm:flex-initial text-center px-5 py-2.5 bg-brand-secondary hover:bg-brand-secondary-hover text-slate-950 text-xs font-bold rounded shadow-lg shadow-brand-secondary/15 cursor-pointer"
+        >
+          Solicitar Demo WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reusable Floating Calendar drawer widget is loaded automatically from ContactWidget.astro -->
+  <ContactWidget />
+</LandingLayout>
+
+<script>
+  let activeCurrency = "PEN";
+  let currentSoles = 12450;
+  let currentDollars = 3365;
+
+  function setupCurrencySwitch() {
+    const switchSoles = document.getElementById("currency-switch-soles");
+    const switchDolares = document.getElementById("currency-switch-dolares");
+    const currencyValues = document.querySelectorAll(".currency-value");
+
+    if (!switchSoles || !switchDolares) return;
+
+    function setCurrency(currency: string) {
+      activeCurrency = currency;
+      if (currency === "PEN") {
+        switchSoles.classList.add("bg-brand-secondary", "text-slate-950");
+        switchSoles.classList.remove("text-slate-400", "hover:text-slate-200");
+        switchDolares.classList.remove("bg-brand-secondary", "text-slate-950");
+        switchDolares.classList.add("text-slate-400", "hover:text-slate-200");
+      } else {
+        switchDolares.classList.add("bg-brand-secondary", "text-slate-950");
+        switchDolares.classList.remove(
+          "text-slate-400",
+          "hover:text-slate-200",
+        );
+        switchSoles.classList.remove("bg-brand-secondary", "text-slate-950");
+        switchSoles.classList.add("text-slate-400", "hover:text-slate-200");
+      }
+
+      currencyValues.forEach((el) => {
+        const val = el.getAttribute(
+          currency === "PEN" ? "data-pen" : "data-usd",
+        );
+        if (val) el.textContent = val;
+      });
+
+      // Update speedometer live leak amount if present
+      const liveLeakAmount = document.getElementById("live-leak-amount");
+      if (liveLeakAmount) {
+        const rawLeak = parseInt(
+          liveLeakAmount.getAttribute("data-value") || "0",
+          10,
+        );
+        if (currency === "PEN") {
+          liveLeakAmount.textContent = `S/. ${rawLeak.toLocaleString("es-PE")}`;
+        } else {
+          const usdLeak = Math.round(rawLeak / 3.7);
+          liveLeakAmount.textContent = `$${usdLeak.toLocaleString("en-US")}`;
+        }
+      }
+
+      // Update assessment widget formatting dynamically when currency changes
+      updateAssessment();
+    }
+
+    switchSoles.addEventListener("click", () => setCurrency("PEN"));
+    switchDolares.addEventListener("click", () => setCurrency("USD"));
+  }
+
+  // SELF-ASSESSMENT WIDGET LOGIC
+  function updateAssessment() {
+    const sliderSucursales = document.getElementById(
+      "slider-sucursales",
+    ) as HTMLInputElement;
+    const sliderSkus = document.getElementById(
+      "slider-skus",
+    ) as HTMLInputElement;
+    const sliderFacturacion = document.getElementById(
+      "slider-facturacion",
+    ) as HTMLInputElement;
+
+    const valSucursales = document.getElementById("val-sucursales");
+    const valSkus = document.getElementById("val-skus");
+    const valFacturacion = document.getElementById("val-facturacion");
+    const badge = document.getElementById("assessment-badge");
+    const feedback = document.getElementById("assessment-feedback");
+
+    if (!sliderSucursales || !sliderSkus || !sliderFacturacion) return;
+
+    const sucs = parseInt(sliderSucursales.value);
+    const skus = parseInt(sliderSkus.value);
+    const fact = parseInt(sliderFacturacion.value);
+
+    // Update labels
+    if (valSucursales) {
+      valSucursales.textContent =
+        sucs === 1 ? "1 sucursal" : `${sucs} sucursales`;
+    }
+
+    if (valSkus) {
+      valSkus.textContent =
+        skus >= 10000 ? "10,000+ SKUs" : `${skus.toLocaleString("es-PE")} SKUs`;
+    }
+
+    if (valFacturacion) {
+      valFacturacion.textContent = formatCurrencyValue(fact);
+      valFacturacion.setAttribute("data-value", fact.toString());
+    }
+
+    // Qualification rule: sucs >= 2 AND skus >= 3000 AND fact >= 5000000
+    const qualified = sucs >= 2 && skus >= 3000 && fact >= 5000000;
+
+    if (qualified) {
+      if (badge) {
+        badge.className =
+          "px-2 py-0.5 rounded text-[8px] font-bold font-mono transition-colors uppercase bg-emerald-950 border border-emerald-500/30 text-emerald-400";
+        badge.textContent = "COMPATIBLE";
+      }
+      if (feedback) {
+        feedback.className =
+          "bg-emerald-950/20 border border-emerald-500/30 rounded-lg p-4 text-[11px] sm:text-xs text-emerald-300 leading-relaxed font-sans transition-all text-left";
+        feedback.textContent =
+          "Operación Calificada: Tu negocio está perdiendo margen por falta de control. ERP Exacta tiene tu solución pre-configurada.";
+      }
+    } else {
+      if (badge) {
+        badge.className =
+          "px-2 py-0.5 rounded text-[8px] font-bold font-mono transition-colors uppercase bg-red-950/60 border border-red-500/30 text-red-400";
+        badge.textContent = "NO COMPATIBLE";
+      }
+      if (feedback) {
+        feedback.className =
+          "bg-red-950/10 border border-red-500/20 rounded-lg p-4 text-[11px] sm:text-xs text-red-300 leading-relaxed font-sans transition-all text-left";
+        feedback.textContent =
+          "Tu escala de negocio se adaptaría mejor a un facturador tradicional de oficina.";
+      }
+    }
+  }
+
+  function formatCurrencyValue(value: number) {
+    if (activeCurrency === "PEN") {
+      if (value >= 15000000) return "S/. 15 Millones+";
+      if (value >= 1000000)
+        return `S/. ${(value / 1000000).toFixed(1).replace(".0", "")} Millones`;
+      return `S/. ${value.toLocaleString("es-PE")}`;
+    } else {
+      const usdVal = Math.round(value / 3.7);
+      if (usdVal >= 4000000) return "$4 Millones+";
+      if (usdVal >= 1000000)
+        return `$${(usdVal / 1000000).toFixed(1).replace(".0", "")} Millones`;
+      if (usdVal >= 1000) return `$${Math.round(usdVal / 1000)}K`;
+      return `$${usdVal.toLocaleString("en-US")}`;
+    }
+  }
+
+  function setupAssessmentSlider() {
+    const sliderSucursales = document.getElementById("slider-sucursales");
+    const sliderSkus = document.getElementById("slider-skus");
+    const sliderFacturacion = document.getElementById("slider-facturacion");
+
+    if (!sliderSucursales || !sliderSkus || !sliderFacturacion) return;
+
+    [sliderSucursales, sliderSkus, sliderFacturacion].forEach((slider) => {
+      slider.addEventListener("input", updateAssessment);
+    });
+
+    // Run initial rendering
+    updateAssessment();
+  }
+
+  // DYNAMIC DUAL CURRENCY METRICS SIMULATOR (Hero panel)
+  function animateKPIs() {
+    const kpiEl = document.getElementById("kpi-utilidad-bruta");
+    if (!kpiEl) return;
+
+    setInterval(() => {
+      // Simulate micro transactions updating live
+      const solesDiff = Math.floor(Math.random() * 40) + 10;
+      const dollarsDiff = Math.floor(Math.random() * 12) + 3;
+
+      currentSoles += solesDiff;
+      currentDollars += dollarsDiff;
+
+      kpiEl.setAttribute(
+        "data-pen",
+        `S/. ${currentSoles.toLocaleString("es-PE")}`,
+      );
+      kpiEl.setAttribute(
+        "data-usd",
+        `$${currentDollars.toLocaleString("en-US")}`,
+      );
+
+      if (activeCurrency === "PEN") {
+        kpiEl.textContent = `S/. ${currentSoles.toLocaleString("es-PE")}`;
+      } else {
+        kpiEl.textContent = `$${currentDollars.toLocaleString("en-US")}`;
+      }
+    }, 3000);
+  }
+
+  // AI DIAGNOSTIC CHATBOT WIDGET CONTROLLER
+  function setupChatbot() {
+    const step1Actions = document.getElementById("step-1-actions");
+    const step2Actions = document.getElementById("step-2-actions");
+    const step3Actions = document.getElementById("step-3-actions");
+    const step4Actions = document.getElementById("step-4-actions");
+    const botMsg2 = document.getElementById("bot-msg-2");
+    const botMsg3 = document.getElementById("bot-msg-3");
+    const botMsg4 = document.getElementById("bot-msg-4");
+    const typingIndicator = document.getElementById("typing-indicator");
+    const qualificationText = document.getElementById("qualification-text");
+    const submitBtn = document.getElementById("btn-submit-diagnostic");
+    const whatsappInput = document.getElementById(
+      "diag-whatsapp",
+    ) as HTMLInputElement;
+    const chatContainer = document.getElementById("chat-messages-container");
+
+    const gaugeFill = document.getElementById("gauge-fill");
+    const gaugeNeedle = document.getElementById("gauge-needle");
+    const liveLeakAmount = document.getElementById("live-leak-amount");
+    const riskBadge = document.getElementById("risk-level-badge");
+
+    if (
+      !step1Actions ||
+      !step2Actions ||
+      !step3Actions ||
+      !step4Actions ||
+      !botMsg2 ||
+      !botMsg3 ||
+      !botMsg4 ||
+      !typingIndicator ||
+      !submitBtn ||
+      !whatsappInput
+    )
+      return;
+
+    let points = 0;
+    let baseLeakSoles = 0;
+    let selectedQ1Text = "";
+    let selectedQ2Text = "";
+    let selectedQ3Text = "";
+    let isDescarte = false;
+
+    // Helper: update gauge visual state
+    function updateGaugeVisual(targetLeak: number) {
+      if (!gaugeFill || !gaugeNeedle || !liveLeakAmount || !riskBadge) return;
+
+      // Max leak is 18500
+      const percentage = Math.min(100, Math.max(0, (targetLeak / 18500) * 100));
+
+      // Arc stroke dashoffset (125.6 is full length of semi-circle arc)
+      const offset = 125.6 - (percentage / 100) * 125.6;
+      gaugeFill.setAttribute("stroke-dashoffset", offset.toString());
+
+      // Needle rotation from -90deg to 90deg
+      const angle = -90 + percentage * 1.8;
+      gaugeNeedle.style.transform = `rotate(${angle}deg)`;
+
+      // Risk level mapping
+      if (percentage <= 15) {
+        riskBadge.textContent = "BAJO";
+        riskBadge.className =
+          "px-2 py-0.5 rounded text-[10px] font-bold bg-slate-950 border border-slate-800 text-emerald-400";
+      } else if (percentage <= 50) {
+        riskBadge.textContent = "MEDIO";
+        riskBadge.className =
+          "px-2 py-0.5 rounded text-[10px] font-bold bg-slate-950 border border-slate-800 text-yellow-500";
+      } else {
+        riskBadge.textContent = "CRÍTICO / ALTO";
+        riskBadge.className =
+          "px-2 py-0.5 rounded text-[10px] font-bold bg-slate-950 border border-slate-800 text-red-500 animate-pulse";
+      }
+
+      // Money amount: bimonetary translation
+      liveLeakAmount.setAttribute("data-value", targetLeak.toString());
+      if (activeCurrency === "PEN") {
+        liveLeakAmount.textContent = `S/. ${targetLeak.toLocaleString("es-PE")}`;
+      } else {
+        const usdLeak = Math.round(targetLeak / 3.7);
+        liveLeakAmount.textContent = `$${usdLeak.toLocaleString("en-US")}`;
+      }
+    }
+
+    // Helper: append user message bubble to chat
+    function appendUserMessage(text: string) {
+      if (!chatContainer) return;
+      const bubble = document.createElement("div");
+      bubble.className = "flex items-start gap-3 justify-end text-right";
+      bubble.innerHTML = `
+        <div class="bg-brand-primary text-white border border-brand-primary/20 rounded-lg p-3 max-w-[80%] text-xs sm:text-sm">
+          <p>${text}</p>
+        </div>
+      `;
+      chatContainer.insertBefore(bubble, typingIndicator);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+
+    // Step 1 Click (Mostradores)
+    const step1Buttons = step1Actions.querySelectorAll(".chat-btn-option");
+    step1Buttons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        const btn = e.currentTarget as HTMLButtonElement;
+        const pts = parseInt(btn.dataset.points || "0", 10);
+        const lk = parseInt(btn.dataset.leak || "0", 10);
+        selectedQ1Text = btn.dataset.text || btn.textContent?.trim() || "";
+
+        points += pts;
+        baseLeakSoles += lk;
+        updateGaugeVisual(baseLeakSoles);
+
+        step1Actions.classList.add("hidden");
+        appendUserMessage(selectedQ1Text);
+
+        typingIndicator.classList.remove("hidden");
+        if (chatContainer) chatContainer.scrollTop = chatContainer.scrollHeight;
+
+        setTimeout(() => {
+          typingIndicator.classList.add("hidden");
+          botMsg2.classList.remove("hidden");
+          step2Actions.classList.remove("hidden");
+          if (chatContainer)
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }, 1200);
+      });
+    });
+
+    // Step 2 Click (Dolor de cabeza)
+    const step2Buttons = step2Actions.querySelectorAll(".chat-btn-option");
+    step2Buttons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        const btn = e.currentTarget as HTMLButtonElement;
+        const pts = parseInt(btn.dataset.points || "0", 10);
+        const lk = parseInt(btn.dataset.leak || "0", 10);
+        selectedQ2Text = btn.dataset.text || btn.textContent?.trim() || "";
+
+        points += pts;
+        baseLeakSoles += lk;
+        updateGaugeVisual(baseLeakSoles);
+
+        step2Actions.classList.add("hidden");
+        appendUserMessage(selectedQ2Text);
+
+        typingIndicator.classList.remove("hidden");
+        if (chatContainer) chatContainer.scrollTop = chatContainer.scrollHeight;
+
+        setTimeout(() => {
+          typingIndicator.classList.add("hidden");
+          botMsg3.classList.remove("hidden");
+          step3Actions.classList.remove("hidden");
+          if (chatContainer)
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }, 1200);
+      });
+    });
+
+    // Step 3 Click (Facturación)
+    const step3Buttons = step3Actions.querySelectorAll(".chat-btn-option");
+    step3Buttons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        const btn = e.currentTarget as HTMLButtonElement;
+        const pts = parseInt(btn.dataset.points || "0", 10);
+        const lk = parseInt(btn.dataset.leak || "0", 10);
+        isDescarte = btn.dataset.descarte === "true";
+        selectedQ3Text = btn.dataset.text || btn.textContent?.trim() || "";
+
+        points += pts;
+        baseLeakSoles += lk;
+        updateGaugeVisual(baseLeakSoles);
+
+        step3Actions.classList.add("hidden");
+        appendUserMessage(selectedQ3Text);
+
+        typingIndicator.classList.remove("hidden");
+        if (chatContainer) chatContainer.scrollTop = chatContainer.scrollHeight;
+
+        setTimeout(() => {
+          typingIndicator.classList.add("hidden");
+
+          // Formulate final message based on qualification points
+          let formattedLeakStr =
+            activeCurrency === "PEN"
+              ? `S/. ${baseLeakSoles.toLocaleString("es-PE")}`
+              : `$${Math.round(baseLeakSoles / 3.7).toLocaleString("en-US")}`;
+
+          if (isDescarte) {
+            qualificationText.innerHTML = `
+              Cálculo completado. Según tus respuestas, tu operación tiene un <span class="text-yellow-400 font-bold">Nivel de Fuga Operativa: BAJO / MODERADO</span> (Puntaje estimado de pérdida: ${formattedLeakStr} mensuales).<br/><br/>
+              Tu escala comercial indica que te beneficiarías de un facturador contable básico. Sin embargo, si deseas recibir nuestro <strong>Reporte PDF de Diagnóstico Clínico de Márgenes</strong> para optimizar tus procesos futuros, ingresa tu WhatsApp de contacto.
+            `;
+          } else {
+            qualificationText.innerHTML = `
+              Cálculo completado. Según tus respuestas, tu operación tiene un <span class="text-red-400 font-bold">Nivel de Fuga Operativa: ALTO</span> (Puntaje estimado de pérdida: <strong class="text-red-400">${formattedLeakStr} mensuales</strong> por quiebres de stock y compras en plaza descontroladas).<br/><br/>
+              Tu negocio <strong class="text-emerald-400">califica estructuralmente</strong> para nuestra Garantía de Implementación y Estabilización Express en 30 días.<br/><br/>
+              Para enviarte de inmediato a tu WhatsApp el <strong>Reporte PDF de Diagnóstico Clínico de Márgenes</strong> (detallando cómo solucionamos este cuello de botella exacto), ingresa tu número móvil principal. Cero spam, directo a tu teléfono.
+            `;
+          }
+
+          botMsg4.classList.remove("hidden");
+          step4Actions.classList.remove("hidden");
+          if (chatContainer)
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }, 1500);
+      });
+    });
+
+    // Step 4 Click (WhatsApp lead capture)
+    submitBtn.addEventListener("click", () => {
+      const whatsapp = whatsappInput.value.trim();
+      if (!whatsapp) {
+        alert(
+          "Por favor, ingresa tu celular de WhatsApp para recibir tu Diagnóstico Clínico.",
+        );
+        return;
+      }
+
+      let formattedLeakStr =
+        activeCurrency === "PEN"
+          ? `S/. ${baseLeakSoles.toLocaleString("es-PE")}`
+          : `$${Math.round(baseLeakSoles / 3.7).toLocaleString("en-US")}`;
+
+      const text = `Hola ERP Exacta, acabo de realizar el diagnóstico de fugas de margen en exactaerp.pe.
+- Puntos de venta: ${selectedQ1Text}
+- Dolor principal: ${selectedQ2Text}
+- Rango de facturación: ${selectedQ3Text}
+- Fuga Estimada: ${formattedLeakStr} mensuales (Puntaje: ${points} pts)
+- WhatsApp de contacto: ${whatsapp}
+Deseo recibir de inmediato mi Reporte PDF de Diagnóstico Clínico de Márgenes y programar la llamada técnica de validación.`;
+
+      const waUrl = `https://wa.me/51999647337?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, "_blank");
+    });
+  }
+
+  // CASE STUDY LIGHTBOX OVERLAY CONTROLLER
+  function setupLightboxModal() {
+    const caseStudies: Record<
+      string,
+      { title: string; before: string; after: string; metric: string }
+    > = {
+      autorex: {
+        title: "Cómo Autorex logró control total de márgenes multitienda",
+        before:
+          "Caos en la valorización de inventarios, desfases en mostrador y descuentos no autorizados por vendedores.",
+        after:
+          "Kárdex SUNAT integrado, bloqueo en vivo de fugas de margen y mostrador totalmente sincronizado.",
+        metric: "Integración express de 5 sucursales en 30 días",
+      },
+      "m&m": {
+        title: "Cómo M&M Repuestos consolidó su kárdex multi-almacén",
+        before:
+          "Regularizaciones fiscales manuales e inviabilidad de control de repuestos en Excel.",
+        after:
+          "Control en tránsito, costeo automatizado de importaciones y regularización automatizada de compras en plaza.",
+        metric: "Sincronización en vivo de +15,000 SKUs",
+      },
+      nissan: {
+        title: "Cómo Nissan Motors estabilizó su cadena de repuestos",
+        before:
+          "Falta de compatibilidades correctas para repuestos específicos y lentitud en la cadena de distribución.",
+        after:
+          "Parametrización exacta de códigos cruzados, cotizaciones express en segundos.",
+        metric: "Reducción de errores de stock al 0.1%",
+      },
+      epizentrum: {
+        title: "Cómo Epizentrum unificó sus mostradores mayoristas",
+        before:
+          "Ventas cruzadas lentas, falta de stock real en plaza provocaba pérdida de clientes.",
+        after:
+          "Facturación fluida sin stock con Almacén de Tránsito y reposición express en sucursales.",
+        metric: "Incremento del 18% en velocidad de caja",
+      },
+      refarco: {
+        title: "Cómo Refarco blindó sus márgenes de importación",
+        before:
+          "Gastos de aduana, fletes e impuestos prorrateados manualmente semanas después del arribo.",
+        after:
+          "Costeo automático de importaciones en vivo con 4 métodos de distribución de costos en un clic.",
+        metric: "Cierre exacto de importación el mismo día",
+      },
+      metso: {
+        title: "Cómo Metso optimizó operaciones de servicios mineros",
+        before:
+          "Sistemas rígidos que no integraban horas de ingeniería de campo con el kárdex central.",
+        after:
+          "Órdenes de Trabajo digitales integradas en vivo con tareo y repuestos imputados directo al costo.",
+        metric: "Trazabilidad del 100% en contratos mineros",
+      },
+      hermes: {
+        title: "Cómo Hermes controla la logística de valores",
+        before:
+          "Falta de control de rentabilidad unitaria por contrato en tiempo real y asignación manual de recursos.",
+        after:
+          "Integración de costos de mano de obra y activos directamente vinculados a los flujos operativos contables.",
+        metric: "Estabilización de plataforma crítica",
+      },
+      "tesin perú": {
+        title: "Cómo Tesin Perú redujo tiempos en mantenimiento de activos",
+        before:
+          "Facturación de OTs tardaba días porque repuestos usados en talleres no se descontaban al instante.",
+        after:
+          "Imputación inmediata de repuestos a OTs y facturación instantánea al terminar el servicio.",
+        metric: "Cierre de OTs de 5 días a 10 minutos",
+      },
+      corptech: {
+        title: "Cómo Corptech digitalizó su control de campo técnico",
+        before:
+          "Personal de campo reportaba tareos en papel de forma retrasada, provocando pérdidas por horas muertas.",
+        after:
+          "Registro digital de tareos y consumo de insumos consolidado con el kárdex central en tiempo real.",
+        metric: "Ahorro del 12% en costos operativos",
+      },
+      "its electromecatrónica": {
+        title: "Cómo ITS Electromecatrónica integró proyectos complejos",
+        before:
+          "Incapacidad de ver el margen de ganancia real de proyectos mecánicos hasta el cierre del mes.",
+        after:
+          "Reportes de rentabilidad en vivo por proyecto con conciliación de caja en soles y dólares.",
+        metric: "Auditoría en tiempo real de proyectos",
+      },
+      laive: {
+        title: "Cómo Laive procesa flujos de alta transaccionalidad",
+        before:
+          "Cierre manual de mes causaba cuellos de botella en facturación y demoras en tesorería.",
+        after:
+          "Ingeniería de alta transaccionalidad sin caídas del sistema y reportes contables sin paradas.",
+        metric: "+3 Millones de registros auditados al mes",
+      },
+      "pastelería fina bocados": {
+        title: "Cómo Pastelería Bocados unificó retail y producción",
+        before:
+          "Falta de control en el consumo de insumos perecibles y descuadres diarios de caja.",
+        after:
+          "Descuento automático de insumos en vivo según recetas de producción y arqueo de caja automático.",
+        metric: "Mermas inexplicables reducidas a cero",
+      },
+      "elite gaming": {
+        title: "Cómo Elite Gaming estabilizó su alta caja en soles/dólares",
+        before:
+          "Cierres diarios complicados por cobros mixtos (Efectivo, Yape, Plin y tarjetas) y bimonetarios.",
+        after:
+          "Conciliación multi-pasarela automática e información de caja disponible de inmediato.",
+        metric: "Cuadre de caja diario instantáneo",
+      },
+      "garmic group": {
+        title: "Cómo Garmic Group automatizó su tesorería en vivo",
+        before:
+          "Pagos de facturas duplicados y retraso en cobranza por falta de alertas financieras.",
+        after:
+          "Alertas automáticas de vencimiento de crédito y conciliación bancaria integrada en línea.",
+        metric: "Cuentas por cobrar optimizadas al 98%",
+      },
+      topitop: {
+        title: "Cómo Topitop respalda su cadena logística",
+        before:
+          "Procesamiento lento de despachos inter-almacenes y rigidez en reportes gerenciales nacionales.",
+        after:
+          "Integración contable robusta para transacciones logísticas complejas sin interrupción de servicios.",
+        metric: "Ingeniería transaccional de alta escala",
+      },
+    };
+
+    const modal = document.getElementById("lightbox-modal");
+    const closeBtn = document.getElementById("close-lightbox");
+    const titleEl = document.getElementById("lightbox-title");
+    const beforeEl = document.getElementById("lightbox-before");
+    const afterEl = document.getElementById("lightbox-after");
+    const metricEl = document.getElementById("lightbox-metric");
+    const logoBtns = document.querySelectorAll(".logo-btn");
+
+    if (!modal || !closeBtn || !titleEl || !beforeEl || !afterEl || !metricEl)
+      return;
+
+    logoBtns.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const target = e.currentTarget as HTMLButtonElement;
+        const key = target.dataset.id || "";
+        const data = caseStudies[key];
+
+        if (data) {
+          titleEl.textContent = data.title;
+          beforeEl.textContent = data.before;
+          afterEl.textContent = data.after;
+          metricEl.textContent = data.metric;
+
+          // Open Modal
+          modal.classList.remove("hidden");
+          setTimeout(() => {
+            modal.classList.remove("opacity-0");
+            modal.classList.add("opacity-100");
+          }, 10);
+        }
+      });
+    });
+
+    function closeModal() {
+      if (!modal) return;
+      modal.classList.remove("opacity-100");
+      modal.classList.add("opacity-0");
+      setTimeout(() => {
+        modal.classList.add("hidden");
+      }, 300);
+    }
+
+    closeBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  // SCROLL-CONTROLLED STICKY BOTTOM BAR
+  function setupStickyBar() {
+    const stickyBar = document.getElementById("sticky-bar");
+    const contactWidget = document.getElementById("contact-widget-container");
+
+    window.addEventListener("scroll", () => {
+      if (stickyBar) {
+        // Show when user scrolls down past 600px
+        if (window.scrollY > 600) {
+          stickyBar.classList.remove("translate-y-24");
+          stickyBar.classList.add("translate-y-0");
+
+          // Shift floating widgets up to avoid overlap with sticky bar
+          if (contactWidget) {
+            contactWidget.classList.remove("bottom-6");
+            contactWidget.classList.add("bottom-24");
+          }
+        } else {
+          stickyBar.classList.remove("translate-y-0");
+          stickyBar.classList.add("translate-y-24");
+
+          // Restore floating elements down
+          if (contactWidget) {
+            contactWidget.classList.remove("bottom-24");
+            contactWidget.classList.add("bottom-6");
+          }
+        }
+      }
+    });
+  }
+
+  // INTERACTIVE PROGRESS STEPS (Adoption Timeline)
+  function setupAdoptionSteps() {
+    const steps = document.querySelectorAll(".adoption-step");
+    const progressBar = document.getElementById("adoption-progress-bar");
+
+    if (steps.length === 0 || !progressBar) return;
+
+    steps.forEach((step, idx) => {
+      step.addEventListener("mouseenter", () => {
+        const stepNum = idx + 1;
+        const progressPercentage = (stepNum / steps.length) * 100;
+        progressBar.style.width = `${progressPercentage}%`;
+
+        // Update step visual states
+        steps.forEach((s, sIdx) => {
+          const numEl = s.querySelector(".step-num");
+          if (!numEl) return;
+          if (sIdx <= idx) {
+            numEl.classList.add(
+              "border-brand-secondary",
+              "text-brand-secondary",
+            );
+            numEl.classList.remove("border-slate-900", "text-slate-600");
+          } else {
+            numEl.classList.add("border-slate-900", "text-slate-600");
+            numEl.classList.remove(
+              "border-brand-secondary",
+              "text-brand-secondary",
+            );
+          }
+        });
+      });
+    });
+  }
+
+  // CTA FEASIBILITY DRILLDOWN TO SCHEDULER DRAWER
+  function setupFeasibilityCTA() {
+    const feasibilityBtn = document.getElementById("btn-schedule-feasibility");
+    const schedulerTrigger = document.getElementById("scheduler-trigger");
+    const optScheduleBtn = document.getElementById("btn-opt-schedule");
+
+    if (!feasibilityBtn) return;
+
+    feasibilityBtn.addEventListener("click", () => {
+      if (schedulerTrigger) {
+        // Toggle the drawer if it is closed
+        const drawer = document.getElementById("scheduler-drawer");
+        if (drawer && drawer.classList.contains("opacity-0")) {
+          schedulerTrigger.click();
+        }
+        if (optScheduleBtn) {
+          optScheduleBtn.click();
+        }
+      }
+    });
+  }
+
+  // Run initializers when DOM is fully loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    setupCurrencySwitch();
+    setupAssessmentSlider();
+    animateKPIs();
+
+    setupLightboxModal();
+    setupChatbot();
+    setupStickyBar();
+    setupAdoptionSteps();
+    setupFeasibilityCTA();
+  });
+</script>
+
+<style>
+  /* Infinite Horizontal Scrolling Animation */
+  .marquee-track {
+    animation: scroll-marquee 25s linear infinite;
+  }
+
+  @keyframes scroll-marquee {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  /* Chat button hover styling */
+  .chat-btn-option:hover {
+    box-shadow: 0 4px 12px rgba(242, 116, 39, 0.15);
+  }
+
+  @keyframes marquee-arrow {
+    0% {
+      transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+      transform: translate3d(250%, 0, 0);
+    }
+  }
+
+  .animate-marquee-arrow {
+    animation: marquee-arrow 2.5s linear infinite;
+  }
+</style>
